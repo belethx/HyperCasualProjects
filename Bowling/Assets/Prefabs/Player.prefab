@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4492066761804040589}
   - component: {fileID: 4492066761804040588}
   - component: {fileID: 4492066761804040587}
+  - component: {fileID: 3137129516188420313}
   - component: {fileID: 4492066761804040586}
   - component: {fileID: 4492066761804040591}
   m_Layer: 0
@@ -99,6 +100,22 @@ MonoBehaviour:
   speed: 300
   tenpinPower: 70
   upgradePower: 10
+--- !u!114 &3137129516188420313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492066761804040585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaff85dc2206734f8fd67de30e724f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _smootnessIndex: 0
+  varnisCounter: 0.4
+  _varnisMaterials: []
+  _emeryMaterials: []
 --- !u!135 &4492066761804040586
 SphereCollider:
   m_ObjectHideFlags: 0
