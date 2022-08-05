@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     void VerticalMovement()
     {
-        
+        //oyuncunun sağa sola hareketi
     }
 
     private void OnCollisionEnter(Collision other)
