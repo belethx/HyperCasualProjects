@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float _currentSpeed;
     private float _currentTenpinPower;
     private Vector3 _playerTransform;
+    private bool finalShot;
     
     private Rigidbody _rigidbody;
 
@@ -28,13 +29,19 @@ public class PlayerMovement : MonoBehaviour
     }
     
     void Update()
-    { 
-        Move();
-
-        _playerTransform.x = 0;
+    {
+        HorizontalMovement();
+        if (!finalShot)
+        {
+            VerticalMovement();  
+        }
+        else
+        {
+            _playerTransform.x = 0;
+        }
     }
 
-    void Move()
+    void HorizontalMovement()
     {
         Vector3 move = new Vector3(0, 0, _currentSpeed);
         _rigidbody.velocity = move * Time.deltaTime;
@@ -49,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void VerticalMovement()
+    {
+        
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag(Constants.tenpinTag))
@@ -61,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag(Constants.finalTag))
         {
-
+            finalShot = true;
         }
         else if (other.CompareTag(Constants.varnishTag))
         {

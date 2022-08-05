@@ -10,33 +10,41 @@ public class PlayerUpgrades : MonoBehaviour
     [SerializeField] private Material[] _varnisMaterials;
     [SerializeField] private Material[] _emeryMaterials;
     
-    private Material _currentMaterial;
-    private float emeryCounter;
+    private Renderer _currentMaterial;
+    private int emeryCounter;
 
+    
+    
     private void Awake()
     {
-        _currentMaterial = GetComponent<Renderer>().sharedMaterial;
+        _currentMaterial = GetComponent<Renderer>();
     }
 
     void Start()
     {
         //başlangıç smoothness'ı 0 olacak
+        _currentMaterial.material = _emeryMaterials[emeryCounter];
     }
 
     void Update()
     {
         VarnishUpgrade();
+        //EmeryUpgrade();
     }
 
-    void VarnishUpgrade()
+    
+    
+    void VarnishUpgrade() //material'in smmothness'ı değeri katsayıya göre artacak
     {
-        //material'in smmothness'ı değeri katsayıya göre artacak
+        _currentMaterial.material.SetFloat("_Smoothness", _smootnessIndex);
     }
     
-    void EmeryUpgrade()
+    void EmeryUpgrade()  //material emeryCounter sayısına göre arrey'den değişecek
     {
-        //material emeryCounter sayısına göre arrey'den değişecek
+        _currentMaterial.material = _emeryMaterials[emeryCounter];
     }
+    
+    
     
     private void OnTriggerEnter(Collider other)
     {
@@ -44,13 +52,13 @@ public class PlayerUpgrades : MonoBehaviour
         {
             _smootnessIndex += varnisCounter;
         }
+        else if (other.CompareTag(Constants.mugTag))
+        {
+            _smootnessIndex -= varnisCounter;
+        }
         else if (other.CompareTag(Constants.emeryTag))
         {
             emeryCounter++;
-        }
-        else if (other.CompareTag(Constants.mugTag))
-        {
-            varnisCounter--;
         }
     }
 }

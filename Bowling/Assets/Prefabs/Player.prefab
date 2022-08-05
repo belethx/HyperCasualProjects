@@ -113,9 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _smootnessIndex: 0
-  varnisCounter: 0.4
+  varnisCounter: 0.34
   _varnisMaterials: []
-  _emeryMaterials: []
+  _emeryMaterials:
+  - {fileID: 2100000, guid: b1ddb1491dfb048448a82f7949e575c2, type: 2}
+  - {fileID: 2100000, guid: c15031979f896f544a55f10385e223c6, type: 2}
+  - {fileID: 2100000, guid: 699cfd6fd3f874b42998cb075b37a963, type: 2}
 --- !u!135 &4492066761804040586
 SphereCollider:
   m_ObjectHideFlags: 0
