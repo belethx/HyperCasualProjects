@@ -9,6 +9,7 @@ public class PlayerUpgrades : MonoBehaviour
     [SerializeField] private float varnisCounter= 0.40f;
     [SerializeField] private Material[] _varnisMaterials;
     [SerializeField] private Material[] _emeryMaterials;
+    [SerializeField] private float _holeOffset = 0.5f;
 
     private Renderer _renderer;
     private int _emeryCounter;
@@ -44,9 +45,9 @@ public class PlayerUpgrades : MonoBehaviour
     {
         _renderer.material = _emeryMaterials[_emeryCounter];
     }
-    
-    
-    
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.varnishTag))
@@ -60,6 +61,10 @@ public class PlayerUpgrades : MonoBehaviour
         else if (other.CompareTag(Constants.emeryTag))
         {
             _emeryCounter++;
+        }
+        else if (other.CompareTag(Constants.holeTag))
+        {
+            _renderer.material.SetTextureOffset("_MainTex", new Vector2(_holeOffset, 0));
         }
     }
 }

@@ -12,8 +12,8 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgrades.cs" />
     </changedPaths>
   </component>

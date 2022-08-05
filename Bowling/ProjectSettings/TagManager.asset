@@ -9,6 +9,7 @@ TagManager:
   - Final
   - Varnish
   - Mug
+  - Hole
   layers:
   - Default
   - TransparentFX
