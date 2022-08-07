@@ -14,6 +14,7 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgrades.cs" />
     </changedPaths>
   </component>
@@ -64,6 +65,8 @@
       <workItem from="1659645386032" duration="2859000" />
       <workItem from="1659696433270" duration="2828000" />
       <workItem from="1659727809124" duration="2106000" />
+      <workItem from="1659798495534" duration="5958000" />
+      <workItem from="1659899170871" duration="723000" />
     </task>
     <servers />
   </component>

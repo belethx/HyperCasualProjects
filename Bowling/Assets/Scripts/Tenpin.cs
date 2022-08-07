@@ -28,6 +28,7 @@ public class Tenpin : MonoBehaviour
         if (other.collider.CompareTag(Constants.playerTag))
         {
             _rigidbody.AddForce(Vector3.right * power * Time. deltaTime * _hitPower);
+            Destroy(gameObject, 3);
         }
     }
 }
