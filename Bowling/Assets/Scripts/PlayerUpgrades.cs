@@ -7,15 +7,14 @@ public class PlayerUpgrades : MonoBehaviour
 {
     [SerializeField] float _smootnessIndex = 0;
     [SerializeField] private float varnisCounter= 0.40f;
-    [SerializeField] private Material[] _varnisMaterials;
     [SerializeField] private Material[] _emeryMaterials;
-    [SerializeField] private float _holeOffset = 0.5f;
+    [SerializeField] private float _holeOffset = 0.25f;
 
     private Renderer _renderer;
     private int _emeryCounter;
 
-    
-    
+
+
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -32,6 +31,8 @@ public class PlayerUpgrades : MonoBehaviour
     {
         EmeryUpgrade();
         VarnishUpgrade();
+        
+        //Debug.Log(_renderer.material.GetTextureOffset("_MainTex"));
     }
 
     
@@ -62,9 +63,9 @@ public class PlayerUpgrades : MonoBehaviour
         {
             _emeryCounter++;
         }
-        else if (other.CompareTag(Constants.holeTag))
+        else if (other.CompareTag(Constants.holeTag)) //materail x offset +0.5
         {
-            _renderer.material.SetTextureOffset("_MainTex", new Vector2(_holeOffset, 0));
+            _renderer.material.SetTextureOffset ("_MainTex", new Vector2(_holeOffset, 0));
         }
     }
 }
