@@ -15,6 +15,7 @@ public class Tenpin : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        
         _hitPower = Random.Range(-1, 1);
         
         if (_hitPower == 0)
@@ -27,7 +28,7 @@ public class Tenpin : MonoBehaviour
     {
         if (other.collider.CompareTag(Constants.playerTag))
         {
-            _rigidbody.AddForce(Vector3.right * power * Time. deltaTime * _hitPower);
+            _rigidbody.AddForce(Vector3.right * power * Time.deltaTime * _hitPower);
             Destroy(gameObject, 3);
         }
     }
