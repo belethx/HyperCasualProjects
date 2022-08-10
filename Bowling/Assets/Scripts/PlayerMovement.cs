@@ -6,31 +6,39 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
+    public float currentSpeed;
     [SerializeField] private float tenpinPower = 50;
     [SerializeField] private float upgradePower = 5;
     
-    private float _currentSpeed;
+    public bool finalShot;
+    
     private float _currentTenpinPower;
     private Vector3 _playerTransform;
-    private bool finalShot;
-    
+
     private Rigidbody _rigidbody;
+
+    private StartCanvas _startCanvas;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _startCanvas = FindObjectOfType<StartCanvas>();
     }
 
     void Start()
     {
-        _currentSpeed = speed;
+        currentSpeed = speed;
         _currentTenpinPower = tenpinPower;
         _playerTransform = transform.position;
     }
     
     void Update()
     {
-        HorizontalMovement();
+        if (_startCanvas.canStart)
+        {
+            HorizontalMovement();
+        }
+        
         if (!finalShot)
         {
             VerticalMovement();  
@@ -43,16 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
     void HorizontalMovement()
     {
-        Vector3 move = new Vector3(0, 0, _currentSpeed);
+        Vector3 move = new Vector3(0, 0, currentSpeed);
         _rigidbody.velocity = move * Time.deltaTime;
 
-        if (_currentSpeed <= 50)
+        if (currentSpeed <= 50)
         {
-            _currentSpeed = 0;
+            currentSpeed = 0;
         }
-        else if(_currentSpeed <= 0)
+        else if(currentSpeed <= 0)
         {
-            _currentSpeed = 0;
+            currentSpeed = 0;
         }
     }
 
@@ -65,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.collider.CompareTag(Constants.tenpinTag))
         {
-            _currentSpeed -= _currentTenpinPower;
+            currentSpeed -= _currentTenpinPower;
         }
     }
 

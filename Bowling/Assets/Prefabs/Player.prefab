@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
-  tenpinPower: 70
+  currentSpeed: 0
+  tenpinPower: 500
   upgradePower: 10
+  finalShot: 0
 --- !u!114 &3137129516188420313
 MonoBehaviour:
   m_ObjectHideFlags: 0
