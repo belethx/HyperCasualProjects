@@ -13,22 +13,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StartCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgrades.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/StartCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Finish.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StartCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgrades.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -88,6 +84,7 @@
       <workItem from="1660167075126" duration="11789000" />
       <workItem from="1660231863649" duration="3250000" />
       <workItem from="1660242973263" duration="1334000" />
+      <workItem from="1660246732638" duration="4299000" />
     </task>
     <servers />
   </component>

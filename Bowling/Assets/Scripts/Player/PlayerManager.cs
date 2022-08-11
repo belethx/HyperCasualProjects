@@ -9,8 +9,9 @@ namespace Player
         private IMoveState _moveState;
         private Rigidbody _playerRigidbody;
         private Camera _camera;
-        public bool isStart = true;
-        public bool isFinish = true;
+        public bool isStart ;
+        public bool isFinish ;
+        public bool finalShot ;
         private Transform _playerTransform;
         [SerializeField] private float swipeSpeed;
         [SerializeField] private float playerSpeed;
@@ -32,7 +33,7 @@ namespace Player
 
         void Update()
         {
-            if (!isStart && !isFinish)
+            if (isStart && !isFinish)
             {
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, playerSpeed);
             }
@@ -42,6 +43,10 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
+            if (other.gameObject.CompareTag(Constants.finalTag))
+            {
+                finalShot = true;
+            }
             if (other.gameObject.CompareTag("finishObject"))
             {
                 isFinish = true;

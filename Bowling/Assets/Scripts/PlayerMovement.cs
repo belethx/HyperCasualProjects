@@ -17,12 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
-    private StartCanvas _startCanvas;
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _startCanvas = FindObjectOfType<StartCanvas>();
     }
 
     void Start()
@@ -34,11 +31,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        if (_startCanvas.canStart)
-        {
-            HorizontalMovement();
-        }
-        
+        HorizontalMovement();
+
         if (!finalShot)
         {
             VerticalMovement();  
