@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Canvas : MonoBehaviour
 {
-    [SerializeField]private PlayerManager _playerManager;
+    [SerializeField] private PlayerManager _playerManager;
+    
     public void Movement()
     {
         _playerManager.isStart = false;

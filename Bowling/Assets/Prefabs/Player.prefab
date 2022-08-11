@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3137129516188420313}
   - component: {fileID: 4492066761804040586}
   - component: {fileID: 4492066761804040591}
+  - component: {fileID: 905091159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4492066761804040585}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5685e1ec226f533499425b17aa8d2440, type: 3}
   m_Name: 
@@ -147,5 +148,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &905091159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492066761804040585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStart: 0
+  isFinish: 1
+  swipeSpeed: 5
+  playerSpeed: 50
+  angle: 5
+  finalShoot: 5
