@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class StartCanvas : MonoBehaviour
 {
     public bool canStart;
-
     private PlayerMovement _playerMovement;
     private FinalCanvas _finalCanvas;
 
@@ -20,8 +20,11 @@ public class StartCanvas : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            
             gameObject.SetActive(false);
             canStart = true;
         }
     }
+
+  
 }
