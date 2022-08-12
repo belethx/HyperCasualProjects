@@ -17,6 +17,7 @@ namespace Player
         [SerializeField] private float playerSpeed;
         [SerializeField] private float angle;
         [SerializeField] private float finalShoot;
+        [SerializeField] private float upgradePower;
 
 
         private void Awake()
@@ -33,9 +34,15 @@ namespace Player
 
         void Update()
         {
-            if (isStart && !isFinish)
+            if (isStart && !finalShot)
             {
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, playerSpeed);
+            }
+
+            if (playerSpeed <= 5) // yavaş atıp top durursa, hız değişebilir
+            {
+                playerSpeed = 0;
+                isFinish = true;
             }
 
             _moveState.Movement();
@@ -43,14 +50,34 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag(Constants.finalTag))
+            // Upgrades
+            if (other.CompareTag(Constants.varnishTag))
+            {
+                finalShoot += upgradePower;
+            }
+            if (other.CompareTag(Constants.emeryTag))
+            {
+                finalShoot += upgradePower;
+            }
+            if (other.CompareTag(Constants.mugTag))
+            {
+                finalShoot -= upgradePower;
+            }
+            if (other.CompareTag(Constants.holeTag))
+            {
+                finalShoot += upgradePower;
+            }
+
+            // Final part
+            if (other.gameObject.CompareTag(Constants.shotTag))
             {
                 finalShot = true;
+                _moveState = new ShotState(_playerRigidbody, angle, finalShoot);
             }
-            if (other.gameObject.CompareTag("finishObject"))
+            if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
                 isFinish = true;
-                _moveState = new Finish(_playerRigidbody, angle, finalShoot);
+                _playerRigidbody.velocity = Vector3.zero;
             }
         }
     }

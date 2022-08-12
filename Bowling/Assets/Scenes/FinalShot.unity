@@ -156,7 +156,7 @@ Transform:
   - {fileID: 1014471879}
   - {fileID: 383601596}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73660202
 GameObject:
@@ -253,8 +253,8 @@ GameObject:
   - component: {fileID: 110090248}
   - component: {fileID: 110090247}
   m_Layer: 0
-  m_Name: FinalLine
-  m_TagString: finishObject
+  m_Name: Finish_Line_Trigger
+  m_TagString: FinishLine
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,8 +270,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.5, y: 11.16, z: 2.77}
-  m_Center: {x: 6.49, y: 0, z: 0}
+  m_Size: {x: 25, y: 25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &110090248
 Transform:
   m_ObjectHideFlags: 0
@@ -280,11 +280,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110090246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.07489, y: 4.13, z: 56.5}
+  m_LocalPosition: {x: 0, y: 0, z: 74.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &177465478 stripped
 Transform:
@@ -1483,7 +1483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575327687
 GameObject:
@@ -2602,7 +2602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1020423102
 MonoBehaviour:
@@ -2782,7 +2782,7 @@ Transform:
   - {fileID: 394583384}
   - {fileID: 1324563101}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324563100
 GameObject:
@@ -3295,7 +3295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3383,8 +3383,8 @@ GameObject:
   - component: {fileID: 1522465630}
   - component: {fileID: 1522465629}
   m_Layer: 0
-  m_Name: Final_Trigger
-  m_TagString: Final
+  m_Name: Final_Shot_Trigger
+  m_TagString: FinalShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3410,7 +3410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522465628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 19.46}
+  m_LocalPosition: {x: 0, y: 0, z: 47.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4030,7 +4030,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 0.77873516, b: 0, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.82645047, b: 0.2971698, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9153578, b: 0.6556604, a: 1}
     m_PressedColor: {r: 0.6698113, g: 0.5087333, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -4197,7 +4197,7 @@ Transform:
   - {fileID: 1927857363}
   - {fileID: 479823681}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1955144327 stripped
 Transform:
@@ -4357,10 +4357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 905091159, guid: 4a8cfa3e49eaec54290a6905b8d85ced, type: 3}
-      propertyPath: playerSpeed
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 4492066761804040585, guid: 4a8cfa3e49eaec54290a6905b8d85ced, type: 3}
       propertyPath: m_Name
       value: Player

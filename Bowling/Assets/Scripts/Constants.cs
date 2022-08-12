@@ -12,5 +12,6 @@ public class Constants : MonoBehaviour
     public static string holeTag = "Hole";
     
     
-    public static string finalTag = "Final";
+    public static string shotTag = "FinalShot";
+    public static string finalLineTag = "FinishLine";
 }

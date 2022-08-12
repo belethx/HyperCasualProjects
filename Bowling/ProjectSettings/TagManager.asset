@@ -6,11 +6,11 @@ TagManager:
   tags:
   - Tenpin
   - Emery
-  - Final
   - Varnish
   - Mug
   - Hole
-  - finishObject
+  - FinalShot
+  - FinishLine
   layers:
   - Default
   - TransparentFX

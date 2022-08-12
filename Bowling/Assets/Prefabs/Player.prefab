@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 4492066761804040590}
   - component: {fileID: 4492066761804040589}
   - component: {fileID: 4492066761804040588}
-  - component: {fileID: 4492066761804040587}
+  - component: {fileID: 905091159}
   - component: {fileID: 3137129516188420313}
   - component: {fileID: 4492066761804040586}
   - component: {fileID: 4492066761804040591}
-  - component: {fileID: 905091159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -86,23 +85,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4492066761804040587
+--- !u!114 &905091159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4492066761804040585}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5685e1ec226f533499425b17aa8d2440, type: 3}
+  m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
-  currentSpeed: 0
-  tenpinPower: 500
-  upgradePower: 10
+  isStart: 0
+  isFinish: 1
   finalShot: 0
+  swipeSpeed: 5
+  playerSpeed: 50
+  angle: 5
+  finalShoot: 5
+  upgradePower: 1
 --- !u!114 &3137129516188420313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,21 +152,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!114 &905091159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4492066761804040585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStart: 0
-  isFinish: 1
-  swipeSpeed: 5
-  playerSpeed: 50
-  angle: 5
-  finalShoot: 5

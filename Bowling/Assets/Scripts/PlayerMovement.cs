@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(Constants.finalTag))
+        if (other.CompareTag(Constants.shotTag))
         {
             finalShot = true;
         }

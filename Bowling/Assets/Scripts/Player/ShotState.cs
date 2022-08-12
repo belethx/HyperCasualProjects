@@ -2,13 +2,13 @@
 
 namespace Player
 {
-    public class Finish : IMoveState
+    public class ShotState : IMoveState
     {
         private Rigidbody ballRb;
         private float _playerSpeed;
         private float _playerAngle;
 
-        public Finish(Rigidbody playerRb , float playerAngle,float speed =5f) 
+        public ShotState(Rigidbody playerRb , float playerAngle,float speed =5f) 
         {
             ballRb = playerRb;
             _playerSpeed = speed;
