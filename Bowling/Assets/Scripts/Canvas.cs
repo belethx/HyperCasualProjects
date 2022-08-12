@@ -13,13 +13,10 @@ public class Canvas : MonoBehaviour
     [SerializeField] private GameObject finalShotPanel;
     [SerializeField] private GameObject finishPanel;
     [SerializeField] private GameObject marketPanel;
-    [SerializeField] private GameObject martketButton;
-    
 
     private void Start()
     {
         startPanel.SetActive(true);
-        marketPanel.SetActive(true);
 
         finalShotPanel.SetActive(false);
         finishPanel.SetActive(false);
@@ -36,6 +33,8 @@ public class Canvas : MonoBehaviour
         {
             finishPanel.SetActive(true);
         }
+        
+        Debug.Log(finishPanel.Equals(enabled));
     }
     
     /*public void Movement()
@@ -51,7 +50,6 @@ public class Canvas : MonoBehaviour
         
         startPanel.SetActive(false);
         finishPanel.SetActive(false);
-        martketButton.SetActive(false);
     }
     
     public void MartketPanel()

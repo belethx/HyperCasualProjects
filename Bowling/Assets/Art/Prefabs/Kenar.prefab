@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2460121985444296127}
   - component: {fileID: 414591340821201269}
   m_Layer: 0
-  m_Name: kose
+  m_Name: Kenar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

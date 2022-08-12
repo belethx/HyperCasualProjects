@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1943719849843054077}
   - component: {fileID: 7990955182256262289}
   m_Layer: 0
-  m_Name: lobut
+  m_Name: Labut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
