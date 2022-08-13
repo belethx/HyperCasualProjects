@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    [SerializeField] float _smootnessIndex = 0;
+    [SerializeField] float smootnessIndex = 0;
     [SerializeField] private float varnisCounter= 0.40f;
-    [SerializeField] private Material[] _emeryMaterials;
-    [SerializeField] private float _holeOffset = 0.25f;
+    [SerializeField] private Material[] emeryMaterials;
+    [SerializeField] private float holeOffset = 0.25f;
 
     private Renderer _renderer;
     private int _emeryCounter;
@@ -23,8 +23,8 @@ public class PlayerUpgrades : MonoBehaviour
     void Start()
     {
         //başlangıç smoothness'ı 0 olacak
-        _renderer.material = _emeryMaterials[_emeryCounter];
-        _renderer.material = _emeryMaterials[0];
+        _renderer.material = emeryMaterials[_emeryCounter];
+        _renderer.material = emeryMaterials[0];
     }
 
     void Update()
@@ -39,12 +39,12 @@ public class PlayerUpgrades : MonoBehaviour
     
     void VarnishUpgrade() //material'in smmothness'ı değeri katsayıya göre artacak
     {
-        _renderer.material.SetFloat("_Smoothness", _smootnessIndex);
+        _renderer.material.SetFloat("_Smoothness", smootnessIndex);
     }
     
     void EmeryUpgrade()  //material emeryCounter sayısına göre arrey'den değişecek
     {
-        _renderer.material = _emeryMaterials[_emeryCounter];
+        _renderer.material = emeryMaterials[_emeryCounter];
     }
 
 
@@ -53,11 +53,11 @@ public class PlayerUpgrades : MonoBehaviour
     {
         if (other.CompareTag(Constants.varnishTag))
         {
-            _smootnessIndex += varnisCounter;
+            smootnessIndex += varnisCounter;
         }
         else if (other.CompareTag(Constants.mugTag))
         {
-            _smootnessIndex -= varnisCounter;
+            smootnessIndex -= varnisCounter;
         }
         else if (other.CompareTag(Constants.emeryTag))
         {
@@ -65,7 +65,7 @@ public class PlayerUpgrades : MonoBehaviour
         }
         else if (other.CompareTag(Constants.holeTag)) //materail x offset +0.5
         {
-            _renderer.material.SetTextureOffset ("_MainTex", new Vector2(_holeOffset, 0));
+            _renderer.material.SetTextureOffset ("_MainTex", new Vector2(holeOffset, 0));
         }
     }
 }

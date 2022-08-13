@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4492066761804040588}
   - component: {fileID: 905091159}
   - component: {fileID: 3137129516188420313}
+  - component: {fileID: 4302583715299956158}
   - component: {fileID: 4492066761804040586}
   - component: {fileID: 4492066761804040591}
   m_Layer: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   isFinish: 1
   finalShot: 0
   swipeSpeed: 5
-  playerSpeed: 50
+  playerSpeed: 200
   angle: 5
   finalShoot: 5
   upgradePower: 1
@@ -117,12 +118,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaff85dc2206734f8fd67de30e724f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smootnessIndex: 0
+  smootnessIndex: 0
   varnisCounter: 0.34
-  _emeryMaterials:
+  emeryMaterials:
   - {fileID: 2100000, guid: be29f221de68eb84c82796920117edf8, type: 2}
   - {fileID: 2100000, guid: 83dc6f7ecaf71e7448c928098d1d0b46, type: 2}
-  _holeOffset: 0.5
+  holeOffset: 0.25
+--- !u!114 &4302583715299956158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492066761804040585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936e308c68ffc934eb37d749352e93ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 0
+  startPanelScoreText: {fileID: 0}
+  marketScoreText: {fileID: 0}
+  shotScoreText: {fileID: 0}
 --- !u!135 &4492066761804040586
 SphereCollider:
   m_ObjectHideFlags: 0

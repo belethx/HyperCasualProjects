@@ -13,9 +13,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Score.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Finish.cs" />
@@ -24,9 +26,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/StartState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Score.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -89,6 +95,7 @@
       <workItem from="1660246732638" duration="4299000" />
       <workItem from="1660301729640" duration="3717000" />
       <workItem from="1660329894871" duration="2653000" />
+      <workItem from="1660412320891" duration="4328000" />
     </task>
     <servers />
   </component>
