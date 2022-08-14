@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -9,21 +11,25 @@ namespace Player
         private IMoveState _moveState;
         private Rigidbody _playerRigidbody;
         private Camera _camera;
-        public bool isStart ;
-        public bool isFinish ;
-        public bool finalShot ;
+        private float _shotForce;
+        [HideInInspector] public bool isStart = false;
+        [HideInInspector] public bool isFinish = false;
+        [HideInInspector] public bool finalShot;
         private Transform _playerTransform;
         [SerializeField] private float swipeSpeed;
         [SerializeField] private float playerSpeed;
         [SerializeField] private float angle;
         [SerializeField] private float finalShoot;
         [SerializeField] private float upgradePower;
-
-
+        [SerializeField] private Text shotText;
+        private GameObject _player;
+        
         private void Awake()
         {
+            var pos = gameObject;
+            _player = pos;
             _camera = Camera.main;
-            _playerTransform = gameObject.transform;
+            _playerTransform = pos.transform;
             _playerRigidbody = gameObject.GetComponent<Rigidbody>();
         }
 
@@ -55,15 +61,15 @@ namespace Player
             {
                 finalShoot += upgradePower;
             }
-            if (other.CompareTag(Constants.emeryTag))
+            else if (other.CompareTag(Constants.emeryTag))
             {
                 finalShoot += upgradePower;
             }
-            if (other.CompareTag(Constants.mugTag))
+            else if (other.CompareTag(Constants.mugTag))
             {
                 finalShoot -= upgradePower;
             }
-            if (other.CompareTag(Constants.holeTag))
+            else if (other.CompareTag(Constants.holeTag))
             {
                 finalShoot += upgradePower;
             }
@@ -72,8 +78,10 @@ namespace Player
             if (other.gameObject.CompareTag(Constants.shotTag))
             {
                 finalShot = true;
-                _moveState = new ShotState(_playerRigidbody, angle, finalShoot);
+                _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, playerAngle: angle, shotText,
+                    10, speed: finalShoot);
             }
+
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
                 isFinish = true;

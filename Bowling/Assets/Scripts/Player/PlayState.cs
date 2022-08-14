@@ -21,7 +21,6 @@ namespace Player
         
         public void Movement()
         {
-            Debug.Log("PlayerState");
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = _camera.transform.localPosition.z;
 

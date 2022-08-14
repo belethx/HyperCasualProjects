@@ -14,7 +14,6 @@ namespace Player
         
         public void Movement()
         {
-            Debug.Log("StartState");
             ballRb.velocity = Vector3.zero;;
         }
     }

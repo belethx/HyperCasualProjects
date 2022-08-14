@@ -34,7 +34,7 @@ public class Canvas : MonoBehaviour
             finishPanel.SetActive(true);
         }
         
-        Debug.Log(finishPanel.Equals(enabled));
+      //  Debug.Log(finishPanel.Equals(enabled));
     }
     
     /*public void Movement()
@@ -46,7 +46,7 @@ public class Canvas : MonoBehaviour
     public void StartGame()
     {
         playerManager.isStart = true;
-        playerManager.isFinish = false;
+       
         
         startPanel.SetActive(false);
         finishPanel.SetActive(false);
