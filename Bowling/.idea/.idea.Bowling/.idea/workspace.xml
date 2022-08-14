@@ -15,6 +15,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Score.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogues.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -26,13 +28,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/StartState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Score.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Dialogues.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -96,6 +99,7 @@
       <workItem from="1660301729640" duration="3717000" />
       <workItem from="1660329894871" duration="2653000" />
       <workItem from="1660412320891" duration="4328000" />
+      <workItem from="1660484770754" duration="7390000" />
     </task>
     <servers />
   </component>

@@ -56,6 +56,7 @@ public class Canvas : MonoBehaviour
     {
         startPanel.SetActive(false);
         marketPanel.SetActive(true);
+        finishPanel.SetActive(false);
     }
 
     public void BackToMenu()
