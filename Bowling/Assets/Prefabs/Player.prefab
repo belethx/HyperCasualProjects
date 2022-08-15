@@ -21,7 +21,7 @@ GameObject:
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4492066761804040590
 Transform:
@@ -102,10 +102,11 @@ MonoBehaviour:
   isFinish: 1
   finalShot: 0
   swipeSpeed: 5
-  playerSpeed: 200
+  playerSpeed: 40
   angle: 5
   finalShoot: 5
   upgradePower: 1
+  shotText: {fileID: 0}
 --- !u!114 &3137129516188420313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +125,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: be29f221de68eb84c82796920117edf8, type: 2}
   - {fileID: 2100000, guid: 83dc6f7ecaf71e7448c928098d1d0b46, type: 2}
   holeOffset: 0.25
-  dialogueText: {fileID: 0}
 --- !u!114 &4302583715299956158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,5 +168,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0

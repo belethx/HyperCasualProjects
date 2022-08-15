@@ -6,7 +6,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Canvas : MonoBehaviour
+public class Panels : MonoBehaviour
 {
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private GameObject startPanel;
@@ -16,11 +16,11 @@ public class Canvas : MonoBehaviour
 
     private void Start()
     {
-        startPanel.SetActive(true);
-
-        finalShotPanel.SetActive(false);
         finishPanel.SetActive(false);
+        finalShotPanel.SetActive(false);
         marketPanel.SetActive(false);
+        
+        startPanel.SetActive(true);
     }
 
     private void Update()
@@ -33,8 +33,6 @@ public class Canvas : MonoBehaviour
         {
             finishPanel.SetActive(true);
         }
-        
-      //  Debug.Log(finishPanel.Equals(enabled));
     }
     
     /*public void Movement()
@@ -46,7 +44,7 @@ public class Canvas : MonoBehaviour
     public void StartGame()
     {
         playerManager.isStart = true;
-       
+        playerManager.isFinish = false;
         
         startPanel.SetActive(false);
         finishPanel.SetActive(false);

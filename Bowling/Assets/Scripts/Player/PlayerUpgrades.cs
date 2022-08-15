@@ -74,6 +74,7 @@ public class PlayerUpgrades : MonoBehaviour
         }
         else if (other.CompareTag(Constants.holeTag)) //materail x offset +0.5
         {
+            _dialogues.Dialogue();
             _renderer.material.SetTextureOffset ("_MainTex", new Vector2(holeOffset, 0));
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }

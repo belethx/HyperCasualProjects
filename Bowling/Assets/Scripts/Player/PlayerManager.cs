@@ -12,8 +12,8 @@ namespace Player
         private Rigidbody _playerRigidbody;
         private Camera _camera;
         private float _shotForce;
-        [HideInInspector] public bool isStart = false;
-        [HideInInspector] public bool isFinish = false;
+        [HideInInspector] public bool isStart;
+        [HideInInspector] public bool isFinish ;
         [HideInInspector] public bool finalShot;
         private Transform _playerTransform;
         [SerializeField] private float swipeSpeed;
@@ -31,6 +31,8 @@ namespace Player
             _camera = Camera.main;
             _playerTransform = pos.transform;
             _playerRigidbody = gameObject.GetComponent<Rigidbody>();
+
+            isFinish = false;
         }
 
         void Start()
@@ -45,11 +47,11 @@ namespace Player
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, playerSpeed);
             }
 
-            if (playerSpeed <= 5) // yavaş atıp top durursa, hız değişebilir
-            {
-                playerSpeed = 0;
-                isFinish = true;
-            }
+            // if (playerSpeed <= 5) // yavaş atıp top durursa, hız değişebilir
+            // {
+            //     playerSpeed = 0;
+            //     isFinish = true;
+            // }
 
             _moveState.Movement();
         }
@@ -81,7 +83,6 @@ namespace Player
                 _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, playerAngle: angle, shotText,
                     10, speed: finalShoot);
             }
-
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
                 isFinish = true;
