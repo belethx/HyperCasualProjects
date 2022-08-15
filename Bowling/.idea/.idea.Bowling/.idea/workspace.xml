@@ -23,7 +23,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/StartState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Score.cs" />
@@ -32,6 +31,8 @@
       <option value="$PROJECT_DIR$/Assets/finis.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Panels.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/SFXs.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -100,6 +101,7 @@
       <workItem from="1660555687079" duration="1273000" />
       <workItem from="1660556995144" duration="2097000" />
       <workItem from="1660559555806" duration="1171000" />
+      <workItem from="1660591335509" duration="3612000" />
     </task>
     <servers />
   </component>

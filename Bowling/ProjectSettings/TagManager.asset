@@ -7,11 +7,11 @@ TagManager:
   - Tenpin
   - Emery
   - Varnish
-  - Mug
   - Hole
   - FinalShot
   - FinishLine
   - Ground
+  - Mud
   layers:
   - Default
   - TransparentFX

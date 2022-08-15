@@ -8,7 +8,7 @@ public class Constants : MonoBehaviour
     public static string tenpinTag = "Tenpin";
     public static string varnishTag = "Varnish";
     public static string emeryTag = "Emery";
-    public static string mugTag = "Mug";
+    public static string mugTag = "Mud";
     public static string holeTag = "Hole";
     public static string groundTag = "Ground";
     
