@@ -18,6 +18,7 @@ namespace Player
         private Transform _playerTransform;
         [SerializeField] private float swipeSpeed;
         [SerializeField] private float playerSpeed;
+        [SerializeField] private float upgradeSpeedUp = 5;
         [SerializeField] private float angle;
         [SerializeField] private float finalShoot;
         [SerializeField] private float upgradePower;
@@ -61,18 +62,22 @@ namespace Player
             // Upgrades
             if (other.CompareTag(Constants.varnishTag))
             {
+                playerSpeed += upgradeSpeedUp;
                 finalShoot += upgradePower;
             }
             else if (other.CompareTag(Constants.emeryTag))
             {
+                playerSpeed += upgradeSpeedUp;
                 finalShoot += upgradePower;
             }
             else if (other.CompareTag(Constants.mugTag))
             {
+                playerSpeed -= upgradeSpeedUp;
                 finalShoot -= upgradePower;
             }
             else if (other.CompareTag(Constants.holeTag))
             {
+                playerSpeed += upgradeSpeedUp;
                 finalShoot += upgradePower;
             }
 

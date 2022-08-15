@@ -30,8 +30,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Canvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/finis.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Panels.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -99,6 +99,7 @@
       <workItem from="1660513965496" duration="603000" />
       <workItem from="1660555687079" duration="1273000" />
       <workItem from="1660556995144" duration="2097000" />
+      <workItem from="1660559555806" duration="1171000" />
     </task>
     <servers />
   </component>
