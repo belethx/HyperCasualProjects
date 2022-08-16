@@ -104,7 +104,7 @@ MonoBehaviour:
   isFinish: 1
   finalShot: 0
   swipeSpeed: 5
-  playerSpeed: 40
+  playerSpeed: 100
   upgradeSpeedUp: 5
   angle: 5
   finalShoot: 5

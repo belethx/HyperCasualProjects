@@ -1485,7 +1485,7 @@ GameObject:
   - component: {fileID: 551981089}
   - component: {fileID: 551981088}
   m_Layer: 5
-  m_Name: Start_Game
+  m_Name: Start_Game_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1747,6 +1747,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8955898043578555936, guid: ae07749a7ee7fc64ca455b4a03b573c8, type: 3}
   m_PrefabInstance: {fileID: 1327752176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &620275799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 905091159, guid: 4a8cfa3e49eaec54290a6905b8d85ced, type: 3}
+  m_PrefabInstance: {fileID: 4492066759888035480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649668245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,9 +3199,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351039457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c5344519b170446b9f3fd19d08757e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3455aed5b80c1f242b5f9783a216f719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerManager: {fileID: 620275799}
+  startPanel: {fileID: 1784507705}
+  marketPanel: {fileID: 469190386}
+  finalShotPanel: {fileID: 1015044099}
+  finishPanel: {fileID: 1385704936}
 --- !u!114 &1351039460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3654,8 +3670,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1351039459}
-        m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_TargetAssemblyTypeName: Panels, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4280,8 +4296,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1351039459}
-        m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: NewGame
+        m_TargetAssemblyTypeName: Panels, Assembly-CSharp
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4498,8 +4514,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1351039459}
-        m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: MartketPanel
+        m_TargetAssemblyTypeName: Panels, Assembly-CSharp
+        m_MethodName: MarketMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

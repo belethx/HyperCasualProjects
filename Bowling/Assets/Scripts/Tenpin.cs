@@ -8,19 +8,21 @@ public class Tenpin : MonoBehaviour
 {
     [SerializeField] private float power = 100;
 
-    private int _hitPower;
+    private int _hitDirection;
     
     private Rigidbody _rigidbody;
 
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        
-        _hitPower = Random.Range(-1, 1);
-        
-        if (_hitPower == 0)
+    }
+
+    private void Start()
+    {
+        _hitDirection = Random.Range(-1, 1);
+        if (_hitDirection == 0)
         {
-            _hitPower++;
+            _hitDirection++;
         }
     }
 
@@ -28,7 +30,7 @@ public class Tenpin : MonoBehaviour
     {
         if (other.collider.CompareTag(Constants.playerTag))
         {
-            _rigidbody.AddForce(Vector3.right * power * Time.deltaTime * _hitPower);
+            _rigidbody.AddForce(Vector3.right * power * Time.deltaTime * _hitDirection * 100);
             Destroy(gameObject, 3);
         }
     }
