@@ -21,6 +21,7 @@ namespace Player
         
         public void Movement()
         {
+         
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = _camera.transform.localPosition.z;
 

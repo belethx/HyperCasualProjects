@@ -11,20 +11,50 @@ namespace Player
         private IMoveState _moveState;
         private Rigidbody _playerRigidbody;
         private Camera _camera;
-        private float _shotForce;
-        [HideInInspector] public bool isStart;
-        [HideInInspector] public bool isFinish ;
-        [HideInInspector] public bool finalShot;
-        private Transform _playerTransform;
+        [HideInInspector] public bool isPlay = false; //Oyunda mı
+        [HideInInspector] public bool isFinish;
+        [HideInInspector] public bool finalShot = true; //final atışında mı
+       
         [SerializeField] private float swipeSpeed;
-        [SerializeField] private float playerSpeed;
-        [SerializeField] private float upgradeSpeedUp = 5;
-        [SerializeField] private float angle;
-        [SerializeField] private float finalShoot;
+     
+        [SerializeField] private float upgradeSpeedUp = 10;
         [SerializeField] private float upgradePower;
         [SerializeField] private Text shotText;
+        private Transform _playerTransform;
         private GameObject _player;
-        
+        private float _playerSpeed = 50;
+        private float _finalShoot = 1;
+        private float PlayerSpeed
+        {
+            get => _playerSpeed;
+            set
+            {
+                if (_playerSpeed + upgradeSpeedUp <= 100)
+                {
+                    _playerSpeed = value;
+                }
+                else
+                {
+                    _playerSpeed = 100;
+                }
+            }
+        }
+        private float FinalShoot
+        {
+            get => _finalShoot;
+            set
+            {
+                if (_finalShoot + upgradePower <= 51)
+                {
+                    _finalShoot = value;
+                }
+                else
+                {
+                    _finalShoot = 50;
+                }
+            }
+        }
+
         private void Awake()
         {
             var pos = gameObject;
@@ -43,16 +73,10 @@ namespace Player
 
         void Update()
         {
-            if (isStart && !finalShot)
+            if (isPlay && !finalShot)
             {
-                _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, playerSpeed);
+                _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
             }
-
-            // if (playerSpeed <= 5) // yavaş atıp top durursa, hız değişebilir
-            // {
-            //     playerSpeed = 0;
-            //     isFinish = true;
-            // }
 
             _moveState.Movement();
         }
@@ -62,32 +86,34 @@ namespace Player
             // Upgrades
             if (other.CompareTag(Constants.varnishTag))
             {
-                playerSpeed += upgradeSpeedUp;
-                finalShoot += upgradePower;
+                PlayerSpeed += upgradeSpeedUp;
+                FinalShoot += upgradePower;
             }
             else if (other.CompareTag(Constants.emeryTag))
             {
-                playerSpeed += upgradeSpeedUp;
-                finalShoot += upgradePower;
+                PlayerSpeed += upgradeSpeedUp;
+                FinalShoot += upgradePower;
             }
             else if (other.CompareTag(Constants.mugTag))
             {
-                playerSpeed -= upgradeSpeedUp;
-                finalShoot -= upgradePower;
+                PlayerSpeed -= upgradeSpeedUp;
+                FinalShoot -= upgradePower;
             }
             else if (other.CompareTag(Constants.holeTag))
             {
-                playerSpeed += upgradeSpeedUp;
-                finalShoot += upgradePower;
+                PlayerSpeed += upgradeSpeedUp;
+                FinalShoot += upgradePower;
             }
 
             // Final part
             if (other.gameObject.CompareTag(Constants.shotTag))
             {
+         
                 finalShot = true;
-                _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, playerAngle: angle, shotText,
-                    10, speed: finalShoot);
+                _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, shotText: shotText,
+                    shotForce: FinalShoot);
             }
+
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
                 isFinish = true;

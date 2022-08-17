@@ -37,8 +37,6 @@ public class PlayerUpgrades : MonoBehaviour
         
         //Debug.Log(_renderer.material.GetTextureOffset("_MainTex"));
     }
-
-    
     
     void VarnishUpgrade() //material'in smmothness'ı değeri katsayıya göre artacak
     {
@@ -51,8 +49,6 @@ public class PlayerUpgrades : MonoBehaviour
     }
 
     
-    
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.varnishTag))
