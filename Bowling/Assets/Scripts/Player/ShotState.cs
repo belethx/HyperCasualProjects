@@ -29,15 +29,18 @@ namespace Player
             if (!_isShot)
             {
                 _ballRb.velocity = Vector3.zero;
-                _player.transform.position = Vector3.MoveTowards(_player.transform.position, _target, Time.deltaTime * 5);
+                var position = _player.transform.position;
+                _playerpos = position;
+                position = Vector3.MoveTowards(position, _target, Time.deltaTime * 5);
+                _player.transform.position = position;
                 if (_player.transform.position.z  > 76.5)
                 {
                     _isShot = true;
+                    _shotText.gameObject.SetActive(true);
                 }
             }
             else
             {
-                _shotText.gameObject.SetActive(true);
                 if (Input.GetMouseButton(0))
                 {
                     bool isStop = false;

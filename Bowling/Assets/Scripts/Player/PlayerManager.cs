@@ -14,9 +14,9 @@ namespace Player
         [HideInInspector] public bool isPlay = false; //Oyunda mı
         [HideInInspector] public bool isFinish;
         [HideInInspector] public bool finalShot = true; //final atışında mı
-       
+
         [SerializeField] private float swipeSpeed;
-     
+
         [SerializeField] private float upgradeSpeedUp = 10;
         [SerializeField] private float upgradePower;
         [SerializeField] private Text shotText;
@@ -24,6 +24,7 @@ namespace Player
         private GameObject _player;
         private float _playerSpeed = 50;
         private float _finalShoot = 1;
+
         private float PlayerSpeed
         {
             get => _playerSpeed;
@@ -39,6 +40,7 @@ namespace Player
                 }
             }
         }
+
         private float FinalShoot
         {
             get => _finalShoot;
@@ -83,7 +85,12 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
-            // Upgrades
+            CheckUpgrades(other);
+            CheckFinishLine(other);
+        }
+
+        private void CheckUpgrades(Collider other)
+        {
             if (other.CompareTag(Constants.varnishTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
@@ -104,11 +111,12 @@ namespace Player
                 PlayerSpeed += upgradeSpeedUp;
                 FinalShoot += upgradePower;
             }
+        }
 
-            // Final part
+        private void CheckFinishLine(Collider other)
+        {
             if (other.gameObject.CompareTag(Constants.shotTag))
             {
-         
                 finalShot = true;
                 _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, shotText: shotText,
                     shotForce: FinalShoot);
