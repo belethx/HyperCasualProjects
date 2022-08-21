@@ -8,13 +8,12 @@ public class PlayerUpgrades : MonoBehaviour
 {
     [SerializeField] float smootnessIndex = 0;
     [SerializeField] private float varnisCounter= 0.40f;
-    [SerializeField] private Material[] emeryMaterials;
-    [SerializeField] private float holeOffset = 0.25f;
+    [SerializeField] private Material[] ballMaterials;
+    //[SerializeField] private float holeOffset = 0.25f;
 
     private Renderer _renderer;
     private int _emeryCounter;
     private Dialogues _dialogues;
-
 
     private void Awake()
     {
@@ -25,9 +24,10 @@ public class PlayerUpgrades : MonoBehaviour
     {
         _dialogues = FindObjectOfType<Dialogues>();
         
-        //başlangıç smoothness'ı 0 olacak
-        _renderer.material = emeryMaterials[_emeryCounter];
-        _renderer.material = emeryMaterials[0];
+        _renderer.material.SetFloat("_Smoothness", 0);
+        _emeryCounter = 0;
+        _renderer.material = ballMaterials[_emeryCounter];
+        _renderer.material = ballMaterials[0];
     }
 
     void Update()
@@ -38,17 +38,16 @@ public class PlayerUpgrades : MonoBehaviour
         //Debug.Log(_renderer.material.GetTextureOffset("_MainTex"));
     }
     
-    void VarnishUpgrade() //material'in smmothness'ı değeri katsayıya göre artacak
+    void VarnishUpgrade() 
     {
         _renderer.material.SetFloat("_Smoothness", smootnessIndex);
     }
     
-    void EmeryUpgrade()  //material emeryCounter sayısına göre arrey'den değişecek
+    void EmeryUpgrade()  
     {
-        _renderer.material = emeryMaterials[_emeryCounter];
+        _renderer.material = ballMaterials[_emeryCounter];
     }
 
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.varnishTag))
@@ -68,10 +67,11 @@ public class PlayerUpgrades : MonoBehaviour
             _dialogues.Dialogue();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        else if (other.CompareTag(Constants.holeTag)) //materail x offset +0.5
+        else if (other.CompareTag(Constants.holeTag)) 
         {
             _dialogues.Dialogue();
-            _renderer.material.SetTextureOffset ("_MainTex", new Vector2(holeOffset, 0));
+            _emeryCounter += 2;
+            //_renderer.material.SetTextureOffset ("_MainTex", new Vector2(holeOffset, 0)); //materail x offset +0.5
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }

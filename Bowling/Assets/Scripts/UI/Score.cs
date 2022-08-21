@@ -6,23 +6,24 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public int _score;
+    public int score;
     [SerializeField] private TextMeshProUGUI startPanelScoreText;
     [SerializeField] private TextMeshProUGUI marketScoreText;
     [SerializeField] private TextMeshProUGUI shotScoreText;
 
     void Update()
     {
-        startPanelScoreText.text = _score.ToString();
-        marketScoreText.text = _score.ToString();
-        shotScoreText.text = _score.ToString();
+        startPanelScoreText.text = score.ToString();
+        marketScoreText.text = score.ToString();
+        shotScoreText.text = score.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.tenpinTag))
         {
-            _score++;
+            score++;
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
