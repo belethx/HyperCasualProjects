@@ -34,6 +34,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Score.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">

@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/FinalShot.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 350748f3ebbbe8b4c83a1c59feec09e3
   m_configObjects: {}

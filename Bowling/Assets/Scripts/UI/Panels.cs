@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
+
 
 public class Panels : MonoBehaviour
 {
@@ -13,8 +15,19 @@ public class Panels : MonoBehaviour
     [SerializeField] private GameObject finalShotPanel;
     [SerializeField] private GameObject finishPanel;
 
+    private int _currentSceneIndex;
+    private int _sceneIndex;
+
     private void Start()
     {
+        _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _sceneIndex = Random.Range(0, SceneManager.sceneCount);
+
+        if (_currentSceneIndex == _sceneIndex)
+        {
+            _sceneIndex += 1;
+        }
+        
         startPanel.SetActive(true);
 
         marketPanel.SetActive(false);
@@ -50,7 +63,7 @@ public class Panels : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(_sceneIndex);
     }
 
     private void FinalShotCheck()
