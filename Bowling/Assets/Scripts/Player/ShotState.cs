@@ -9,23 +9,28 @@ namespace Player
     {
         private readonly Rigidbody _ballRb;
         private readonly GameObject _player;
-        private readonly Vector3 _target = new Vector3(0f, 0.5f, 77.5f);
+        private readonly Vector3 _target = new Vector3(0f, 0.5f, 125.5f);
         private Text _shotText;
         private bool _isShot;
         private float shotForce;
         private Vector3 _playerpos;
+        private bool _isStop = true;
+        private bool _isfinish;
+        private GameObject _finishPanel;
 
-        public ShotState(Rigidbody playerRb, GameObject player, Text shotText,float shotForce)
+        public ShotState(Rigidbody playerRb, GameObject player, Text shotText, float shotForce, bool isFinalPanel,
+            GameObject finishPanel)
         {
             _ballRb = playerRb;
             _shotText = shotText;
             this.shotForce = shotForce;
+            _isfinish = isFinalPanel;
+            _finishPanel = finishPanel;
             _player = player;
         }
 
         public void Movement()
         {
-            
             if (!_isShot)
             {
                 _ballRb.velocity = Vector3.zero;
@@ -33,7 +38,7 @@ namespace Player
                 _playerpos = position;
                 position = Vector3.MoveTowards(position, _target, Time.deltaTime * 5);
                 _player.transform.position = position;
-                if (_player.transform.position.z  > 76.5)
+                if (_player.transform.position.z > 125)
                 {
                     _isShot = true;
                     _shotText.gameObject.SetActive(true);
@@ -43,19 +48,26 @@ namespace Player
             {
                 if (Input.GetMouseButton(0))
                 {
-                    bool isStop = false;
                     _shotText.gameObject.SetActive(false);
                     _ballRb.constraints = RigidbodyConstraints.FreezePositionX;
-                    _ballRb.AddForce(0, 0, 50*shotForce);
-                    if (_ballRb.velocity.z > 10) { isStop = true; }
-                    if (isStop && _ballRb.velocity.z<15)
+                    _ballRb.AddForce(0, 0, 10 * shotForce);
+                    if (_ballRb.velocity.z > 3)
                     {
-                        _ballRb.velocity = Vector3.zero;
-                        _ballRb.constraints = RigidbodyConstraints.FreezePositionZ;
+                        _isStop = false;
                     }
                 }
-                
-                
+
+                if (!_isStop && _ballRb.velocity.z < 2)
+                {
+                    _ballRb.velocity = Vector3.zero;
+                    _ballRb.constraints = RigidbodyConstraints.FreezePositionZ;
+                    _isfinish = true;
+                }
+
+                if (_isfinish)
+                {
+                    _finishPanel.SetActive(true);
+                }
             }
         }
     }

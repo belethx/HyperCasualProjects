@@ -20,9 +20,10 @@ namespace Player
         [SerializeField] private float upgradeSpeedUp = 10;
         [SerializeField] private float upgradePower;
         [SerializeField] private Text shotText;
+        [SerializeField] private GameObject finishPanel;
         private Transform _playerTransform;
         private GameObject _player;
-        private float _playerSpeed = 50;
+        private float _playerSpeed = 150;
         private float _finalShoot = 1;
 
         private float PlayerSpeed
@@ -30,13 +31,13 @@ namespace Player
             get => _playerSpeed;
             set
             {
-                if (_playerSpeed + upgradeSpeedUp <= 100)
+                if (_playerSpeed + upgradeSpeedUp <= 200)
                 {
                     _playerSpeed = value;
                 }
                 else
                 {
-                    _playerSpeed = 100;
+                    _playerSpeed = 150;
                 }
             }
         }
@@ -73,7 +74,7 @@ namespace Player
             _moveState = new StartState(_playerRigidbody);
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (isPlay && !finalShot)
             {
@@ -119,12 +120,11 @@ namespace Player
             {
                 finalShot = true;
                 _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, shotText: shotText,
-                    shotForce: FinalShoot);
+                    shotForce: FinalShoot, isFinish, finishPanel);
             }
 
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
-                isFinish = true;
                 _playerRigidbody.velocity = Vector3.zero;
             }
         }

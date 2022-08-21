@@ -37,7 +37,7 @@ namespace Player
                 
                 Vector3 target = Vector3.MoveTowards(position, hitVect,
                     Time.deltaTime * _swipeSpeed);
-                position.x = Mathf.Clamp(target.x, -4.3f, 4.3f);
+                position.x = Mathf.Clamp(target.x, -1.65f, 1.65f);
                 _player.transform.position = position;
             }
         }
