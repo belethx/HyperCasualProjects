@@ -1,29 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class Score : MonoBehaviour
+namespace UI
 {
-    public int score;
-    [SerializeField] private TextMeshProUGUI startPanelScoreText;
-    [SerializeField] private TextMeshProUGUI marketScoreText;
-    [SerializeField] private TextMeshProUGUI shotScoreText;
-
-    void Update()
+    public class Score : MonoBehaviour
     {
-        startPanelScoreText.text = score.ToString();
-        marketScoreText.text = score.ToString();
-        shotScoreText.text = score.ToString();
-    }
+        public int score;
+        [SerializeField] private TextMeshProUGUI menuCoinText;
+        [SerializeField] private TextMeshProUGUI marketCoinText;
+        [SerializeField] private TextMeshProUGUI shotScoreText;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(Constants.tenpinTag))
+        void Update()
         {
-            score++;
-            other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            menuCoinText.text = score.ToString();
+            marketCoinText.text = score.ToString();
+            shotScoreText.text = score.ToString();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(Constants.tenpinTag))
+            {
+                score++;
+                other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            }
         }
     }
 }

@@ -9,20 +9,21 @@ using Random = UnityEngine.Random;
 
 public class Panels : MonoBehaviour
 {
-    [SerializeField] private PlayerManager playerManager;
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject marketPanel;
     [SerializeField] private GameObject finalShotPanel;
     [SerializeField] private GameObject finishPanel;
 
+    private PlayerManager playerManager;
     private int _currentSceneIndex;
     private int _sceneIndex;
 
     private void Start()
     {
+        playerManager = FindObjectOfType<PlayerManager>();
+        
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         _sceneIndex = Random.Range(0, SceneManager.sceneCount);
-
         if (_currentSceneIndex == _sceneIndex)
         {
             _sceneIndex += 1;

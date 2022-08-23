@@ -13,6 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Coin.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" />
@@ -31,10 +34,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Tenpin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Panels.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Score.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Score.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -113,6 +116,7 @@
       <workItem from="1661075919186" duration="2915000" />
       <workItem from="1661112597692" duration="3219000" />
       <workItem from="1661122271713" duration="434000" />
+      <workItem from="1661256950942" duration="1880000" />
     </task>
     <servers />
   </component>
