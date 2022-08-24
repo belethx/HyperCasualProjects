@@ -2738,7 +2738,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 83dc6f7ecaf71e7448c928098d1d0b46, type: 2}
+  - {fileID: 2100000, guid: be29f221de68eb84c82796920117edf8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2796,7 +2796,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 0
 --- !u!4 &1994896690 stripped
 Transform:
@@ -3048,31 +3048,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.33
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9768215
+      value: 0.9659258
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2140558
+      value: 0.2588191
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 24.72
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2022955330944220995, guid: b2d0f1086a4f01b48bad16a522531d83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3182,6 +3182,10 @@ PrefabInstance:
     - target: {fileID: 2147720220443223030, guid: 588898be142241b449323d5d7147a17a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010653850170000778, guid: 588898be142241b449323d5d7147a17a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588898be142241b449323d5d7147a17a, type: 3}
@@ -3362,14 +3366,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeSpeed: 5
+  upgradeSpeedUp: 15
+  upgradeShotSpeed: 5
+  _smokeEffect: {fileID: 4055342876899712030, guid: 9dd083f10a1a112498e2962fb9b3ec3d, type: 3}
+  upgradeSmoke: 5
+  speedEffect: {fileID: 6743894403695224259, guid: 5de3e82cf61ecba4d92dd757c655f602, type: 3}
+  shotText: {fileID: 514739257}
+  finishPanel: {fileID: 1385704936}
   isPlay: 0
   isFinish: 1
   finalShot: 0
-  swipeSpeed: 5
-  upgradeSpeedUp: 15
-  upgradePower: 10
-  shotText: {fileID: 514739257}
-  finishPanel: {fileID: 1385704936}
 --- !u!1001 &5096941007942200896
 PrefabInstance:
   m_ObjectHideFlags: 0

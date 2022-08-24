@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.U2D;
@@ -11,20 +12,31 @@ namespace Player
         private IMoveState _moveState;
         private Rigidbody _playerRigidbody;
         private Camera _camera;
+        
+        [Header("Speed Values")]
+        private float _playerSpeed = 150;
+        private float _finalShoot = 1;
+        [SerializeField] private float swipeSpeed;
+        [SerializeField] private float upgradeSpeedUp = 10;
+        [SerializeField] private float upgradeShotSpeed;
+        
+        [Header("Particle Effect Values")]
+        [SerializeField] ParticleSystem _smokeEffect;
+        private float smokeEmmision = 30;
+        [SerializeField] private float upgradeSmoke = 5;
+        [SerializeField] private ParticleSystem speedEffect;
+        
+        [Header("Others")]
+        [SerializeField] private Text shotText;
+        [SerializeField] private GameObject finishPanel;
+        
         [HideInInspector] public bool isPlay = false; //Oyunda mı
         [HideInInspector] public bool isFinish;
         [HideInInspector] public bool finalShot = true; //final atışında mı
-
-        [SerializeField] private float swipeSpeed;
-
-        [SerializeField] private float upgradeSpeedUp = 10;
-        [SerializeField] private float upgradePower;
-        [SerializeField] private Text shotText;
-        [SerializeField] private GameObject finishPanel;
+        
         private Transform _playerTransform;
         private GameObject _player;
-        private float _playerSpeed = 150;
-        private float _finalShoot = 1;
+        private ParticleSystem _smoke;
 
         private float PlayerSpeed
         {
@@ -47,7 +59,7 @@ namespace Player
             get => _finalShoot;
             set
             {
-                if (_finalShoot + upgradePower <= 51)
+                if (_finalShoot + upgradeShotSpeed <= 51)
                 {
                     _finalShoot = value;
                 }
@@ -67,21 +79,33 @@ namespace Player
             _playerRigidbody = gameObject.GetComponent<Rigidbody>();
 
             isFinish = false;
+
+            //speedEffect = _camera.GetComponentInChildren<ParticleSystem>();
         }
 
         void Start()
         {
             _moveState = new StartState(_playerRigidbody);
+            _smokeEffect.Stop();
         }
 
         void FixedUpdate()
         {
             if (isPlay && !finalShot)
             {
+                _smokeEffect.Play();
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
             }
-
             _moveState.Movement();
+            
+            var smokeEffectEmission = _smokeEffect.emission;
+            smokeEffectEmission.rateOverTime = smokeEmmision;
+            _smoke.transform.position = transform.position;
+        }
+
+        void SpeedEffect()
+        {
+            //hıza göre particle değişicek
         }
 
         private void OnTriggerEnter(Collider other)
@@ -89,28 +113,42 @@ namespace Player
             CheckUpgrades(other);
             CheckFinishLine(other);
         }
+        
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.collider.CompareTag(Constants.groundTag))
+            {
+                _smoke = Instantiate(_smokeEffect, transform.position, Quaternion.Euler(0, 180, 0));
+            }
+        }
+        
+        
 
         private void CheckUpgrades(Collider other)
         {
             if (other.CompareTag(Constants.varnishTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
-                FinalShoot += upgradePower;
+                FinalShoot += upgradeShotSpeed;
+                smokeEmmision += upgradeSmoke;
             }
             else if (other.CompareTag(Constants.emeryTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
-                FinalShoot += upgradePower;
+                FinalShoot += upgradeShotSpeed;
+                smokeEmmision += upgradeSmoke;
             }
             else if (other.CompareTag(Constants.mudTag))
             {
                 PlayerSpeed -= upgradeSpeedUp;
-                FinalShoot -= upgradePower;
+                FinalShoot -= upgradeShotSpeed;
+                smokeEmmision -= upgradeSmoke;
             }
             else if (other.CompareTag(Constants.holeTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
-                FinalShoot += upgradePower;
+                FinalShoot += upgradeShotSpeed;
+                smokeEmmision += upgradeSmoke;
             }
         }
 
@@ -128,5 +166,7 @@ namespace Player
                 _playerRigidbody.velocity = Vector3.zero;
             }
         }
+        
+       
     }
 }

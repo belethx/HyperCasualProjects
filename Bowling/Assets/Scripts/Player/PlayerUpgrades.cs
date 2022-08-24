@@ -41,6 +41,10 @@ public class PlayerUpgrades : MonoBehaviour
     void VarnishUpgrade() 
     {
         _renderer.material.SetFloat("_Smoothness", smootnessIndex);
+        if (smootnessIndex >= 1)
+        {
+            smootnessIndex = 1;
+        }
     }
     
     void EmeryUpgrade()  
