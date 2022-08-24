@@ -13,10 +13,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coins.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" />
@@ -125,6 +121,7 @@
       <workItem from="1661295263969" duration="5885000" />
       <workItem from="1661339411574" duration="7704000" />
       <workItem from="1661355361034" duration="7955000" />
+      <workItem from="1661369563025" duration="5715000" />
     </task>
     <servers />
   </component>

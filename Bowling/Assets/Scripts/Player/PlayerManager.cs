@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,10 +15,10 @@ namespace Player
         private Camera _camera;
         
         [Header("Speed Values")]
-        private float _playerSpeed = 150;
+        private float _playerSpeed = 100;
         private float _finalShoot = 1;
         [SerializeField] private float swipeSpeed;
-        [SerializeField] private float upgradeSpeedUp = 10;
+        [SerializeField] private float upgradeSpeedUp = 50;
         [SerializeField] private float upgradeShotSpeed;
         
         [Header("Particle Effect Values")]
@@ -40,18 +41,18 @@ namespace Player
         private Transform _playerTransform;
         private GameObject _player;
 
-        private float PlayerSpeed
+        public float PlayerSpeed
         {
             get => _playerSpeed;
             set
             {
-                if (_playerSpeed + upgradeSpeedUp <= 200)
+                if (_playerSpeed + upgradeSpeedUp <= 1000)
                 {
                     _playerSpeed = value;
                 }
                 else
                 {
-                    _playerSpeed = 150;
+                    _playerSpeed = 1000;
                 }
             }
         }
@@ -95,7 +96,7 @@ namespace Player
             speedEffect.Stop();
         }
 
-        void FixedUpdate()
+        void Update()
         {
             if (isPlay && !finalShot)
             {
@@ -134,8 +135,14 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
+           
             CheckUpgrades(other);
             CheckFinishLine(other);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Ramp(collision);
         }
 
         private void CheckUpgrades(Collider other)
@@ -186,7 +193,16 @@ namespace Player
                 smokeEffect.Stop();
             }
         }
-        
+
+        private void Ramp(Collision ramp)
+        {
+            if (ramp.gameObject.CompareTag("Ramp"))
+            {
+                var position = gameObject.transform.position;
+                Vector3 endValue = new Vector3(position.x, position.y, position.z + 6);
+                gameObject.transform.DOJump(endValue,3,0,1);
+            }
+        }
        
     }
 }

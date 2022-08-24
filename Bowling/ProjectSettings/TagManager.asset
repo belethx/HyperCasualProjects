@@ -14,6 +14,7 @@ TagManager:
   - Mud
   - Coin
   - Hand
+  - Ramp
   layers:
   - Default
   - TransparentFX
