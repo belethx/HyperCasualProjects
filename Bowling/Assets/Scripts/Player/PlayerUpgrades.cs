@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    [SerializeField] float smootnessIndex = 0;
+    [SerializeField] float currentSmootness = 0;
     [SerializeField] private float varnisCounter= 0.40f;
     [SerializeField] private Material[] ballMaterials;
     //[SerializeField] private float holeOffset = 0.25f;
 
     private Renderer _renderer;
-    private int _emeryCounter;
+    float _basicSmoothness;
+    private int _currentEmeryCounter;
+    private int _basicEmeryCounter;
     private Dialogues _dialogues;
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
+        _currentEmeryCounter = _basicEmeryCounter;
+        currentSmootness = _basicSmoothness;
     }
 
     void Start()
@@ -25,8 +29,7 @@ public class PlayerUpgrades : MonoBehaviour
         _dialogues = FindObjectOfType<Dialogues>();
         
         _renderer.material.SetFloat("_Smoothness", 0);
-        _emeryCounter = 0;
-        _renderer.material = ballMaterials[_emeryCounter];
+        _renderer.material = ballMaterials[_currentEmeryCounter];
         _renderer.material = ballMaterials[0];
     }
 
@@ -40,43 +43,52 @@ public class PlayerUpgrades : MonoBehaviour
     
     void VarnishUpgrade() 
     {
-        _renderer.material.SetFloat("_Smoothness", smootnessIndex);
-        if (smootnessIndex >= 1)
+        _renderer.material.SetFloat("_Smoothness", currentSmootness);
+        if (currentSmootness >= 1)
         {
-            smootnessIndex = 1;
+            currentSmootness = 1;
         }
     }
     
     void EmeryUpgrade()  
     {
-        _renderer.material = ballMaterials[_emeryCounter];
+        _renderer.material = ballMaterials[_currentEmeryCounter];
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.varnishTag))
         {
-            smootnessIndex += varnisCounter;
+            currentSmootness += varnisCounter;
             _dialogues.Dialogue();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         else if (other.CompareTag(Constants.mudTag))
         {
-            smootnessIndex = 0;
+            currentSmootness = 0;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         else if (other.CompareTag(Constants.emeryTag))
         {
-            _emeryCounter++;
+            _currentEmeryCounter++;
             _dialogues.Dialogue();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         else if (other.CompareTag(Constants.holeTag)) 
         {
             _dialogues.Dialogue();
-            _emeryCounter += 2;
+            _currentEmeryCounter += 2;
             //_renderer.material.SetTextureOffset ("_MainTex", new Vector2(holeOffset, 0)); //materail x offset +0.5
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag(Constants.handTag))
+        {
+            _currentEmeryCounter = _basicEmeryCounter;
+            currentSmootness = _basicSmoothness;
         }
     }
 }

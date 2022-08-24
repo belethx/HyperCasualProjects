@@ -15,7 +15,7 @@ namespace Player
         private Camera _camera;
         
         [Header("Speed Values")]
-        private float _playerSpeed = 100;
+        private float _playerSpeed = 150;
         private float _finalShoot = 1;
         [SerializeField] private float swipeSpeed;
         [SerializeField] private float upgradeSpeedUp = 50;
@@ -28,7 +28,6 @@ namespace Player
         [SerializeField] private ParticleSystem speedEffect;
         [SerializeField] private float speedEmmision = 30;
         [SerializeField] private float upgradeSpeedEffect = 10;
-
         
         [Header("Others")]
         [SerializeField] private Text shotText;
@@ -135,12 +134,21 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
-           
             CheckUpgrades(other);
             CheckFinishLine(other);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.collider.CompareTag(Constants.handTag))
+            {
+                other.gameObject.transform.DOMoveZ(transform.position.z - 3, 1);
+                _playerSpeed -= upgradeSpeedUp * 2;
+            }
+            
+        }
+
+        private void OnCollisionStay(Collision collision)
         {
             Ramp(collision);
         }
@@ -203,6 +211,5 @@ namespace Player
                 gameObject.transform.DOJump(endValue,3,0,1);
             }
         }
-       
     }
 }
