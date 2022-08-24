@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coins.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -38,9 +39,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Coin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CoinSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Coins.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -122,6 +124,7 @@
       <workItem from="1661256950942" duration="1880000" />
       <workItem from="1661295263969" duration="5885000" />
       <workItem from="1661339411574" duration="7704000" />
+      <workItem from="1661355361034" duration="7955000" />
     </task>
     <servers />
   </component>

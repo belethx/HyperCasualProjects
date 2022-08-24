@@ -21,10 +21,13 @@ namespace Player
         [SerializeField] private float upgradeShotSpeed;
         
         [Header("Particle Effect Values")]
-        [SerializeField] ParticleSystem _smokeEffect;
-        private float smokeEmmision = 30;
+        [SerializeField] private ParticleSystem smokeEffect;
+        [SerializeField] private float smokeEmmision = 50;
         [SerializeField] private float upgradeSmoke = 5;
         [SerializeField] private ParticleSystem speedEffect;
+        [SerializeField] private float speedEmmision = 30;
+        [SerializeField] private float upgradeSpeedEffect = 10;
+
         
         [Header("Others")]
         [SerializeField] private Text shotText;
@@ -36,7 +39,6 @@ namespace Player
         
         private Transform _playerTransform;
         private GameObject _player;
-        private ParticleSystem _smoke;
 
         private float PlayerSpeed
         {
@@ -69,6 +71,9 @@ namespace Player
                 }
             }
         }
+        
+        
+        
 
         private void Awake()
         {
@@ -86,26 +91,45 @@ namespace Player
         void Start()
         {
             _moveState = new StartState(_playerRigidbody);
-            _smokeEffect.Stop();
+            smokeEffect.Stop();
+            speedEffect.Stop();
         }
 
         void FixedUpdate()
         {
             if (isPlay && !finalShot)
             {
-                _smokeEffect.Play();
+                smokeEffect.Play();
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
             }
             _moveState.Movement();
             
-            var smokeEffectEmission = _smokeEffect.emission;
-            smokeEffectEmission.rateOverTime = smokeEmmision;
-            _smoke.transform.position = transform.position;
+            SmokeEffect();
+            SpeedEffect();
         }
 
         void SpeedEffect()
         {
-            //hıza göre particle değişicek
+            var speedEffectEmission = speedEffect.emission;
+            speedEffectEmission.rateOverTime = speedEmmision;
+
+            if (_playerSpeed <= 5)
+            {
+                speedEffect.Stop();
+            }
+            if (_playerSpeed >= 50)
+            {
+                speedEffect.Play();
+            }
+        }
+
+        void SmokeEffect()
+        {
+            var smokeEffectEmission = smokeEffect.emission;
+            smokeEffectEmission.rateOverTime = smokeEmmision;
+            smokeEffect.transform.rotation = quaternion.Euler(180, 0, 0);
+
+            //final atışında çıkacak mı
         }
 
         private void OnTriggerEnter(Collider other)
@@ -113,16 +137,6 @@ namespace Player
             CheckUpgrades(other);
             CheckFinishLine(other);
         }
-        
-        private void OnCollisionEnter(Collision other)
-        {
-            if (other.collider.CompareTag(Constants.groundTag))
-            {
-                _smoke = Instantiate(_smokeEffect, transform.position, Quaternion.Euler(0, 180, 0));
-            }
-        }
-        
-        
 
         private void CheckUpgrades(Collider other)
         {
@@ -131,24 +145,28 @@ namespace Player
                 PlayerSpeed += upgradeSpeedUp;
                 FinalShoot += upgradeShotSpeed;
                 smokeEmmision += upgradeSmoke;
+                speedEmmision += upgradeSpeedEffect;
             }
             else if (other.CompareTag(Constants.emeryTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
                 FinalShoot += upgradeShotSpeed;
                 smokeEmmision += upgradeSmoke;
+                speedEmmision += upgradeSpeedEffect;
             }
             else if (other.CompareTag(Constants.mudTag))
             {
                 PlayerSpeed -= upgradeSpeedUp;
                 FinalShoot -= upgradeShotSpeed;
                 smokeEmmision -= upgradeSmoke;
+                speedEmmision += upgradeSpeedEffect;
             }
             else if (other.CompareTag(Constants.holeTag))
             {
                 PlayerSpeed += upgradeSpeedUp;
                 FinalShoot += upgradeShotSpeed;
                 smokeEmmision += upgradeSmoke;
+                speedEmmision += upgradeSpeedEffect;
             }
         }
 
@@ -159,11 +177,13 @@ namespace Player
                 finalShot = true;
                 _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, shotText: shotText,
                     shotForce: FinalShoot, isFinish, finishPanel);
+                smokeEffect.Stop();
             }
 
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
                 _playerRigidbody.velocity = Vector3.zero;
+                smokeEffect.Stop();
             }
         }
         

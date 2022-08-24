@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6743894403695224259, guid: 5de3e82cf61ecba4d92dd757c655f602, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6743894403695224261, guid: 5de3e82cf61ecba4d92dd757c655f602, type: 3}
       propertyPath: m_Name
       value: Speed_Effect
