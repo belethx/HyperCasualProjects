@@ -102,7 +102,7 @@ namespace Player
                 PlayerSpeed += upgradeSpeedUp;
                 FinalShoot += upgradePower;
             }
-            else if (other.CompareTag(Constants.mugTag))
+            else if (other.CompareTag(Constants.mudTag))
             {
                 PlayerSpeed -= upgradeSpeedUp;
                 FinalShoot -= upgradePower;

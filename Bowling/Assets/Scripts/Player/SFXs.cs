@@ -1,40 +1,40 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXs : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private AudioClip[] _audioClips;
-
-    private AudioSource _audioSource;
-
-    private void Start()
+    public class SFXs : MonoBehaviour
     {
-        _audioSource = GetComponent<AudioSource>();
-    }
+        [SerializeField] private AudioClip[] audioClips;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(Constants.varnishTag))
+        private AudioSource _audioSource;
+
+        private void Start()
         {
-            _audioSource.PlayOneShot(_audioClips[0]);
+            _audioSource = GetComponent<AudioSource>();
         }
-        else if (other.CompareTag(Constants.mugTag))
+
+        private void OnTriggerEnter(Collider other)
         {
-            _audioSource.PlayOneShot(_audioClips[1]);
-        }
-        else if (other.CompareTag(Constants.emeryTag))
-        {
-            _audioSource.PlayOneShot(_audioClips[2]);
-        }
-        else if (other.CompareTag(Constants.holeTag))
-        {
-            _audioSource.PlayOneShot(_audioClips[3]);
-        }
-        else if (other.CompareTag(Constants.tenpinTag))
-        {
-            _audioSource.PlayOneShot(_audioClips[4]);
+            if (other.CompareTag(Constants.varnishTag))
+            {
+                _audioSource.PlayOneShot(audioClips[0]);
+            }
+            else if (other.CompareTag(Constants.mudTag))
+            {
+                _audioSource.PlayOneShot(audioClips[1]);
+            }
+            else if (other.CompareTag(Constants.emeryTag))
+            {
+                _audioSource.PlayOneShot(audioClips[2]);
+            }
+            else if (other.CompareTag(Constants.holeTag))
+            {
+                _audioSource.PlayOneShot(audioClips[3]);
+            }
+            else if (other.CompareTag(Constants.tenpinTag))
+            {
+                _audioSource.PlayOneShot(audioClips[4]);
+            }
         }
     }
 }

@@ -6,14 +6,10 @@ namespace UI
     public class Score : MonoBehaviour
     {
         public int score;
-        [SerializeField] private TextMeshProUGUI menuCoinText;
-        [SerializeField] private TextMeshProUGUI marketCoinText;
         [SerializeField] private TextMeshProUGUI shotScoreText;
 
         void Update()
         {
-            menuCoinText.text = score.ToString();
-            marketCoinText.text = score.ToString();
             shotScoreText.text = score.ToString();
         }
 

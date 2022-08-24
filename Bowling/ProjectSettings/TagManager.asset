@@ -12,6 +12,7 @@ TagManager:
   - FinishLine
   - Ground
   - Mud
+  - Coin
   layers:
   - Default
   - TransparentFX

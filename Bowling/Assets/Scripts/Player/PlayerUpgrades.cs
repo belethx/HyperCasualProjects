@@ -56,7 +56,7 @@ public class PlayerUpgrades : MonoBehaviour
             _dialogues.Dialogue();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        else if (other.CompareTag(Constants.mugTag))
+        else if (other.CompareTag(Constants.mudTag))
         {
             smootnessIndex = 0;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
