@@ -15,10 +15,10 @@ namespace Player
         private Camera _camera;
         
         [Header("Speed Values")]
-        private float _playerSpeed = 150;
+        private float _playerSpeed = 160;
         private float _finalShoot = 1;
         [SerializeField] private float swipeSpeed;
-        [SerializeField] private float upgradeSpeedUp = 50;
+        [SerializeField] private float upgradeSpeedUp = 60;
         [SerializeField] private float upgradeShotSpeed;
         
         [Header("Particle Effect Values")]
@@ -111,6 +111,7 @@ namespace Player
             
             SmokeEffect();
             SpeedEffect();
+            ShotTime();
         }
         
 
@@ -140,6 +141,15 @@ namespace Player
             }
 
             //final atışında çıkacak mı
+        }
+
+        void ShotTime()
+        {
+            if (finalShot && _playerRigidbody.velocity != Vector3.zero && !isFinish)
+            {
+                smokeEffect.Play();
+                speedEffect.Play();
+            }
         }
 
         void FinishGame()
