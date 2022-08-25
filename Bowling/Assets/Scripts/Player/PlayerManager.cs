@@ -77,12 +77,13 @@ namespace Player
 
         private void Awake()
         {
+            _playerRigidbody = gameObject.GetComponent<Rigidbody>();
+            
             var pos = gameObject;
             _player = pos;
-            _camera = Camera.main;
             _playerTransform = pos.transform;
-            _playerRigidbody = gameObject.GetComponent<Rigidbody>();
-
+            
+            _camera = Camera.main;
             isFinish = false;
             
             smokeEffect.Stop();

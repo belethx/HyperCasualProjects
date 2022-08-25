@@ -38,13 +38,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Coin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CoinSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Coins.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SmokeParticleEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpeedParticleEffect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/FollowCamera.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -129,6 +129,7 @@
       <workItem from="1661355361034" duration="7955000" />
       <workItem from="1661369563025" duration="5715000" />
       <workItem from="1661380979079" duration="6153000" />
+      <workItem from="1661419263663" duration="2656000" />
     </task>
     <servers />
   </component>
