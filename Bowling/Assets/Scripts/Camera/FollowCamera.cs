@@ -20,6 +20,7 @@ public class FollowCamera : MonoBehaviour
     private void Update()
     {
         Follow();
+        
     }
 
     private void Follow()
@@ -28,9 +29,15 @@ public class FollowCamera : MonoBehaviour
         transform.position = followPosition;
         _speed = manager.PlayerSpeed;
         
+        if (_speed > 200)
+        {
+            offset.z = -2.5f;
+            followPosition = _player.transform.position + offset;
+            transform.DOMoveZ(followPosition.z, 0.5f);
+        }
         if (_speed > 230)
         {
-            offset.z = -3f;
+            offset.z = -3.5f;
             followPosition = _player.transform.position + offset;
             transform.DOMoveZ(followPosition.z, 0.5f);
         }

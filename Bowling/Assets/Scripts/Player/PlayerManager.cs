@@ -39,19 +39,20 @@ namespace Player
         
         private Transform _playerTransform;
         private GameObject _player;
+        private bool _isBlocked = false;
 
         public float PlayerSpeed
         {
             get => _playerSpeed;
             set
             {
-                if (_playerSpeed + upgradeSpeedUp <= 1000)
+                if (_playerSpeed + upgradeSpeedUp <= 400 && _playerSpeed>100)
                 {
                     _playerSpeed = value;
                 }
                 else
                 {
-                    _playerSpeed = 1000;
+                    _playerSpeed = 160;
                 }
             }
         }
@@ -97,7 +98,7 @@ namespace Player
 
         void Update()
         {
-            if (isPlay && !finalShot && !isFinish)
+            if (isPlay && !finalShot && !_isBlocked  )
             {
                 smokeEffect.Play();
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
@@ -120,11 +121,13 @@ namespace Player
             var speedEffectEmission = speedEffect.emission;
             speedEffectEmission.rateOverTime = speedEmmision;
 
-            if (_playerSpeed >= 200 && !finalShot)
+            if (PlayerSpeed >= 180f && !finalShot)
             {
+                print(PlayerSpeed);
                 speedEffect.Play();
+                print("çalıştı");
             }
-            else
+            else if(PlayerSpeed<180 )
             {
                 speedEffect.Stop();
             }
@@ -235,10 +238,15 @@ namespace Player
         {
             if (other.collider.CompareTag(Constants.handTag))
             {
-                transform.DOMoveZ(transform.position.z - 3, 1);
+                _isBlocked = true;
+                if (_isBlocked)
+                {
+                    transform.DOMoveZ(transform.position.z - 3, 1);
+                }
                 _playerSpeed -= upgradeSpeedUp * 2;
                 smokeEmmision -= upgradeSmoke;
                 speedEmmision -= upgradeSpeedEffect * 2;
+                _isBlocked = false;
             }
             else if (other.collider.CompareTag(Constants.blockTag))
             {
@@ -250,10 +258,15 @@ namespace Player
             }
             else if (other.collider.CompareTag(Constants.wallTag))
             {
-                 transform.DOMoveZ(transform.position.z - 3, 1);
-                 _playerSpeed -= upgradeSpeedUp * 2;
+                _isBlocked = true;
+                if (_isBlocked)
+                {
+                    transform.DOMoveZ(transform.position.z - 3, 1);
+                }
+                _playerSpeed -= upgradeSpeedUp * 2;
                  smokeEmmision -= upgradeSmoke;
                  speedEmmision -= upgradeSpeedEffect * 2;
+                 _isBlocked = false;
             }
         }
 

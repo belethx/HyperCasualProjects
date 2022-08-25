@@ -3623,6 +3623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2147720220914734499, guid: 588898be142241b449323d5d7147a17a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7010653850170000778, guid: 588898be142241b449323d5d7147a17a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -82.5
@@ -3738,13 +3742,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipeSpeed: 5
-  upgradeSpeedUp: 25
-  upgradeShotSpeed: 5
+  upgradeSpeedUp: 30
+  upgradeShotSpeed: 10
   smokeEffect: {fileID: 1292446295}
   smokeEmmision: 50
   upgradeSmoke: 30
   speedEffect: {fileID: 142053319}
-  speedEmmision: 0
+  speedEmmision: 20
   upgradeSpeedEffect: 10
   shotText: {fileID: 514739257}
   finishPanel: {fileID: 1385704936}
