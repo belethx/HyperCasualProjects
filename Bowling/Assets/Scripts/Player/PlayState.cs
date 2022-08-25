@@ -8,12 +8,14 @@ namespace Player
         private Rigidbody ballRb;
         private Transform _player;
         private float _playerSpeed;
+        private readonly bool _isBlok;
         private float _swipeSpeed;
         
         public PlayState(Rigidbody playerRb ,Camera camera, Transform player, float swipeSpeed,  float speed) 
         {
             ballRb = playerRb;
             _playerSpeed = speed;
+          
             _camera = camera;
             _player = player;
             _swipeSpeed = swipeSpeed;
@@ -27,7 +29,9 @@ namespace Player
 
             Ray ray = _camera.ScreenPointToRay(mousePos);
             RaycastHit hit;
-            ballRb.velocity = new Vector3(0, 0, _playerSpeed * Time.deltaTime);
+           
+                ballRb.velocity = new Vector3(0, 0, _playerSpeed * Time.deltaTime);
+            
             if (Physics.Raycast(ray, out hit, 300f))
             {
                 Vector3 hitVect = hit.point;

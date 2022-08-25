@@ -13,40 +13,48 @@ namespace Player
         private IMoveState _moveState;
         private Rigidbody _playerRigidbody;
         private Camera _camera;
-        
-        [Header("Speed Values")]
-        private float _playerSpeed = 160;
+
+        [Header("Speed Values")] private float _playerSpeed = 160;
         private float _finalShoot = 1;
         [SerializeField] private float swipeSpeed;
         [SerializeField] private float upgradeSpeedUp = 60;
         [SerializeField] private float upgradeShotSpeed;
-        
-        [Header("Particle Effect Values")]
-        [SerializeField] private ParticleSystem smokeEffect;
+
+        [Header("Particle Effect Values")] [SerializeField]
+        private ParticleSystem smokeEffect;
+
         [SerializeField] private float smokeEmmision = 50;
         [SerializeField] private float upgradeSmoke = 5;
         [SerializeField] private ParticleSystem speedEffect;
         [SerializeField] private float speedEmmision = 20;
         [SerializeField] private float upgradeSpeedEffect = 10;
-        
-        [Header("Others")]
-        [SerializeField] private Text shotText;
+
+        [Header("Others")] [SerializeField] private Text shotText;
         [SerializeField] private GameObject finishPanel;
-        
-        [HideInInspector] public bool isPlay = false; 
+
+        [HideInInspector] public bool isPlay = false;
         [HideInInspector] public bool finalShot = true;
         [HideInInspector] public bool isFinish;
 
         private Transform _playerTransform;
         private GameObject _player;
-        private bool _isBlocked = false;
+        private bool isBloked = false;
+
 
         public float PlayerSpeed
         {
-            get => _playerSpeed;
+            get
+            {
+                if (_playerSpeed < 150)
+                {
+                    return 130;
+                }
+
+                return _playerSpeed;
+            }
             set
             {
-                if (_playerSpeed + upgradeSpeedUp <= 400 && _playerSpeed>100)
+                if (_playerSpeed + upgradeSpeedUp <= 400 && _playerSpeed > 100)
                 {
                     _playerSpeed = value;
                 }
@@ -56,6 +64,7 @@ namespace Player
                 }
             }
         }
+
         private float FinalShoot
         {
             get => _finalShoot;
@@ -71,21 +80,19 @@ namespace Player
                 }
             }
         }
-        
-        
-        
 
         private void Awake()
         {
-            _playerRigidbody = gameObject.GetComponent<Rigidbody>();
-            
-            var pos = gameObject;
+            GameObject o;
+            _playerRigidbody = (o = gameObject).GetComponent<Rigidbody>();
+
+            var pos = o;
             _player = pos;
             _playerTransform = pos.transform;
-            
+
             _camera = Camera.main;
             isFinish = false;
-            
+
             smokeEffect.Stop();
             speedEffect.Stop();
         }
@@ -97,7 +104,7 @@ namespace Player
 
         void Update()
         {
-            if (isPlay && !finalShot && !_isBlocked  )
+            if (isPlay && !finalShot && !isBloked)
             {
                 smokeEffect.Play();
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
@@ -108,25 +115,23 @@ namespace Player
             }
 
             _moveState.Movement();
-            
+
             SmokeEffect();
             SpeedEffect();
             ShotTime();
-
-            Debug.Log(isFinish);
         }
-        
+
 
         void SpeedEffect()
         {
             var speedEffectEmission = speedEffect.emission;
             speedEffectEmission.rateOverTime = speedEmmision;
-            
+
             if (_playerSpeed >= 200 && !finalShot)
             {
                 speedEffect.Play();
             }
-            else if(_playerSpeed < 200 || isFinish)
+            else if (_playerSpeed < 200 || isFinish)
             {
                 speedEffect.Stop();
             }
@@ -161,11 +166,8 @@ namespace Player
             _playerRigidbody.velocity = Vector3.zero;
             _moveState = null;
         }
-        
-        
-        
-        
-        
+
+
         void CheckUpgrades(Collider other)
         {
             if (other.CompareTag(Constants.varnishTag))
@@ -198,7 +200,7 @@ namespace Player
             }
             else if (other.CompareTag(Constants.wallTag))
             {
-                transform.DOMoveZ(transform.position.z - 3, 1);
+                Bloking();
                 _playerSpeed -= upgradeSpeedUp * 2;
                 smokeEmmision -= upgradeSmoke;
                 speedEmmision -= upgradeSpeedEffect * 2;
@@ -228,44 +230,27 @@ namespace Player
             if (ramp.gameObject.CompareTag(Constants.rampTag))
             {
                 var position = gameObject.transform.position;
-                Vector3 endValue = new Vector3(position.x, position.y, position.z + 6);
-                gameObject.transform.DOJump(endValue,3,0,1);
+                Vector3 endValue = new Vector3(position.x, position.y + 4, position.z);
+                gameObject.transform.DOMoveY(endValue.y, 0.5f).SetLoops(2, loopType: LoopType.Yoyo);
             }
         }
-        
+
         void Obstacles(Collision other)
         {
             if (other.collider.CompareTag(Constants.handTag))
             {
-                _isBlocked = true;
-                if (_isBlocked)
-                {
-                    transform.DOMoveZ(transform.position.z - 3, 1);
-                }
+                Bloking();
                 _playerSpeed -= upgradeSpeedUp * 2;
                 smokeEmmision -= upgradeSmoke;
                 speedEmmision -= upgradeSpeedEffect * 2;
-                _isBlocked = false;
             }
             else if (other.collider.CompareTag(Constants.blockTag))
             {
-                transform.DOMoveZ(transform.position.z - 3, 1);
+                Bloking();
                 _playerSpeed -= upgradeSpeedUp * 2;
                 smokeEmmision -= upgradeSmoke;
                 speedEmmision -= upgradeSpeedEffect * 2;
                 Destroy(other.gameObject, 0.5f);
-            }
-            else if (other.collider.CompareTag(Constants.wallTag))
-            {
-                _isBlocked = true;
-                if (_isBlocked)
-                {
-                    transform.DOMoveZ(transform.position.z - 3, 1);
-                }
-                _playerSpeed -= upgradeSpeedUp * 2;
-                smokeEmmision -= upgradeSmoke;
-                speedEmmision -= upgradeSpeedEffect * 2;
-                _isBlocked = false;
             }
         }
 
@@ -277,12 +262,23 @@ namespace Player
 
         private void OnCollisionEnter(Collision other)
         {
-           Obstacles(other);
+            Obstacles(other);
         }
 
         private void OnCollisionStay(Collision collision)
         {
             Ramp(collision);
+        }
+
+        private void Bloking()
+        {
+            isBloked = true;
+            _moveState = new StartState(_playerRigidbody);
+            transform.DOMoveZ(transform.position.z - 3, 0.5f).OnKill(() =>
+            {
+                _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed
+                );
+            });
         }
     }
 }

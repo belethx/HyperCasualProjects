@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Coins : MonoBehaviour
@@ -11,6 +12,7 @@ public class Coins : MonoBehaviour
     private void Update()
     {
         transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+     
     }
 
     private void OnTriggerEnter(Collider other)
