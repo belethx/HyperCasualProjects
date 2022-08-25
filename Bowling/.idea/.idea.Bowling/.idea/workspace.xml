@@ -41,12 +41,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Camera/FollowCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Coins.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/SFXs.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Wall.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Fall.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
     </changedPaths>
   </component>

@@ -22,4 +22,5 @@ public class Constants : MonoBehaviour
 
     public static string shotTag = "FinalShot";
     public static string finalLineTag = "FinishLine";
+    public static string finishTag = "Finish";
 }

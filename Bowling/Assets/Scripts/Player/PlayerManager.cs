@@ -83,6 +83,7 @@ namespace Player
 
         private void Awake()
         {
+            Time.timeScale = 1;
             GameObject o;
             _playerRigidbody = (o = gameObject).GetComponent<Rigidbody>();
 
@@ -166,7 +167,6 @@ namespace Player
             _playerRigidbody.velocity = Vector3.zero;
             _moveState = null;
         }
-
 
         void CheckUpgrades(Collider other)
         {
@@ -258,6 +258,12 @@ namespace Player
         {
             CheckUpgrades(other);
             CheckFinishLine(other);
+
+            if (other.CompareTag(Constants.finishTag))
+            {
+                finishPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
 
         private void OnCollisionEnter(Collision other)
