@@ -14,13 +14,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedParticleEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Objects/Wall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedParticleEffect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/FinalCanvas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Finish.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StartCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerUpgrades.cs" />
@@ -47,6 +46,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Objects/Wall.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShotState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
     </changedPaths>
   </component>
@@ -65,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -135,7 +135,7 @@
       <workItem from="1661419263663" duration="7540000" />
       <workItem from="1661438375558" duration="2654000" />
       <workItem from="1661445132134" duration="4583000" />
-      <workItem from="1661455932095" duration="2284000" />
+      <workItem from="1661455932095" duration="8533000" />
     </task>
     <servers />
   </component>
@@ -147,24 +147,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs</url>
-          <line>199</line>
-          <properties documentPath="C:\Users\Fatih\Desktop\source\HyperCasualProjects\Bowling\Assets\Scripts\Player\PlayerManager.cs" initialLine="197" containingFunctionPresentation="method 'CheckUpgrades'">
-            <startOffsets>
-              <option value="5700" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5740" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

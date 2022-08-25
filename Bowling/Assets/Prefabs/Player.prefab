@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: be29f221de68eb84c82796920117edf8, type: 2}
+  - {fileID: 2100000, guid: 7d3d1064f8cec7c4ebb4dec33539fad5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,14 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb36e0b36fce54bb412f25419a36ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeSpeed: 5
+  upgradeSpeedUp: 15
+  upgradeShotSpeed: 0
+  smokeEffect: {fileID: 0}
+  smokeEmmision: 50
+  upgradeSmoke: 5
+  speedEffect: {fileID: 0}
+  speedEmmision: 20
+  upgradeSpeedEffect: 10
+  shotText: {fileID: 0}
+  finishPanel: {fileID: 0}
   isPlay: 0
   isFinish: 1
   finalShot: 0
-  swipeSpeed: 5
-  upgradeSpeedUp: 15
-  upgradePower: 10
-  shotText: {fileID: 0}
-  finishPanel: {fileID: 0}
 --- !u!114 &8474681793526593263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,13 +126,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaff85dc2206734f8fd67de30e724f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smootnessIndex: 0
+  currentSmootness: 0
   varnisCounter: 0.5
   ballMaterials:
   - {fileID: 2100000, guid: be29f221de68eb84c82796920117edf8, type: 2}
   - {fileID: 2100000, guid: 83dc6f7ecaf71e7448c928098d1d0b46, type: 2}
   - {fileID: 2100000, guid: 38fa454930907ed419f95958a9744f79, type: 2}
   - {fileID: 2100000, guid: 0cc1fd2bb75557e44a4f6ccf86d349a7, type: 2}
+  meshFilters: []
+  cuttedBall: {fileID: 0}
 --- !u!114 &7323017418530827144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  startPanelScoreText: {fileID: 0}
-  marketScoreText: {fileID: 0}
   shotScoreText: {fileID: 0}
 --- !u!114 &1558268189758569105
 MonoBehaviour:
@@ -155,12 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706bc363c963a844cbf9b2365919097b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClips:
-  - {fileID: 8300000, guid: ff555d184e49ec74183f8f83b38747b5, type: 3}
-  - {fileID: 8300000, guid: 934049c85068aa841ae8252e887e4926, type: 3}
-  - {fileID: 8300000, guid: 1252d1bc65e41da42afffc38b83c708f, type: 3}
-  - {fileID: 8300000, guid: 55554bfb49bf2e34bad96d2ae2634a5d, type: 3}
-  - {fileID: 8300000, guid: 33fbfa2638cb87a448f3fe138b2f32e7, type: 3}
+  audioClips: []
 --- !u!135 &6936188254185715644
 SphereCollider:
   m_ObjectHideFlags: 0

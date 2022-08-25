@@ -34,9 +34,9 @@ namespace Player
         [SerializeField] private GameObject finishPanel;
         
         [HideInInspector] public bool isPlay = false; 
-        [HideInInspector] public bool isFinish;
         [HideInInspector] public bool finalShot = true;
-        
+        [HideInInspector] public bool isFinish;
+
         private Transform _playerTransform;
         private GameObject _player;
         private bool _isBlocked = false;
@@ -56,7 +56,6 @@ namespace Player
                 }
             }
         }
-
         private float FinalShoot
         {
             get => _finalShoot;
@@ -107,12 +106,14 @@ namespace Player
             {
                 FinishGame();
             }
-           
+
             _moveState.Movement();
             
             SmokeEffect();
             SpeedEffect();
             ShotTime();
+
+            Debug.Log(isFinish);
         }
         
 
@@ -120,14 +121,12 @@ namespace Player
         {
             var speedEffectEmission = speedEffect.emission;
             speedEffectEmission.rateOverTime = speedEmmision;
-
-            if (PlayerSpeed >= 180f && !finalShot)
+            
+            if (_playerSpeed >= 200 && !finalShot)
             {
-                print(PlayerSpeed);
                 speedEffect.Play();
-                print("çalıştı");
             }
-            else if(PlayerSpeed<180 )
+            else if(_playerSpeed < 200 || isFinish)
             {
                 speedEffect.Stop();
             }
@@ -264,9 +263,9 @@ namespace Player
                     transform.DOMoveZ(transform.position.z - 3, 1);
                 }
                 _playerSpeed -= upgradeSpeedUp * 2;
-                 smokeEmmision -= upgradeSmoke;
-                 speedEmmision -= upgradeSpeedEffect * 2;
-                 _isBlocked = false;
+                smokeEmmision -= upgradeSmoke;
+                speedEmmision -= upgradeSpeedEffect * 2;
+                _isBlocked = false;
             }
         }
 

@@ -17,7 +17,6 @@ namespace Player
             _camera = camera;
             _player = player;
             _swipeSpeed = swipeSpeed;
-            Debug.Log("nesne olusturdu");
         }
         
         public void Movement()
