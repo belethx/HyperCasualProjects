@@ -16,11 +16,11 @@ public class Hand : MonoBehaviour
     
     void Start()
     {
-        _startPos = transform.position;
-        _startPos.x += handRightPos;
+        _startPos = new Vector3(handRightPos, 0.9f, transform.position.z);;
+        //_startPos.x += handRightPos;
 
-        _stopPos = transform.position;
-        _stopPos.x += handLeftPos;
+        _stopPos = new Vector3(handLeftPos, 0.9f, transform.position.z);
+        //_stopPos.x += handLeftPos;
 
         _target = _stopPos;
     }

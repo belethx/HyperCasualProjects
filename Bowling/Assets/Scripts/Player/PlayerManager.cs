@@ -26,16 +26,16 @@ namespace Player
         [SerializeField] private float smokeEmmision = 50;
         [SerializeField] private float upgradeSmoke = 5;
         [SerializeField] private ParticleSystem speedEffect;
-        [SerializeField] private float speedEmmision = 30;
+        [SerializeField] private float speedEmmision = 20;
         [SerializeField] private float upgradeSpeedEffect = 10;
         
         [Header("Others")]
         [SerializeField] private Text shotText;
         [SerializeField] private GameObject finishPanel;
         
-        [HideInInspector] public bool isPlay = false; //Oyunda mı
+        [HideInInspector] public bool isPlay = false; 
         [HideInInspector] public bool isFinish;
-        [HideInInspector] public bool finalShot = true; //final atışında mı
+        [HideInInspector] public bool finalShot = true;
         
         private Transform _playerTransform;
         private GameObject _player;
@@ -84,15 +84,14 @@ namespace Player
             _playerRigidbody = gameObject.GetComponent<Rigidbody>();
 
             isFinish = false;
-
-            //speedEffect = _camera.GetComponentInChildren<ParticleSystem>();
+            
+            smokeEffect.Stop();
+            speedEffect.Stop();
         }
 
         void Start()
         {
             _moveState = new StartState(_playerRigidbody);
-            smokeEffect.Stop();
-            speedEffect.Stop();
         }
 
         void Update()
@@ -107,19 +106,20 @@ namespace Player
             SmokeEffect();
             SpeedEffect();
         }
+        
 
         void SpeedEffect()
         {
             var speedEffectEmission = speedEffect.emission;
             speedEffectEmission.rateOverTime = speedEmmision;
 
-            if (_playerSpeed <= 5)
-            {
-                speedEffect.Stop();
-            }
-            if (_playerSpeed >= 50)
+            if (_playerSpeed >= 200 && !finalShot)
             {
                 speedEffect.Play();
+            }
+            else
+            {
+                speedEffect.Stop();
             }
         }
 
@@ -127,7 +127,11 @@ namespace Player
         {
             var smokeEffectEmission = smokeEffect.emission;
             smokeEffectEmission.rateOverTime = smokeEmmision;
-            smokeEffect.transform.rotation = quaternion.Euler(180, 0, 0);
+
+            if (finalShot)
+            {
+                smokeEffect.Stop();
+            }
 
             //final atışında çıkacak mı
         }
@@ -140,12 +144,7 @@ namespace Player
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.collider.CompareTag(Constants.handTag))
-            {
-                other.gameObject.transform.DOMoveZ(transform.position.z - 3, 1);
-                _playerSpeed -= upgradeSpeedUp * 2;
-            }
-            
+           Obstacles(other);
         }
 
         private void OnCollisionStay(Collision collision)
@@ -153,7 +152,7 @@ namespace Player
             Ramp(collision);
         }
 
-        private void CheckUpgrades(Collider other)
+        void CheckUpgrades(Collider other)
         {
             if (other.CompareTag(Constants.varnishTag))
             {
@@ -185,30 +184,47 @@ namespace Player
             }
         }
 
-        private void CheckFinishLine(Collider other)
+        void CheckFinishLine(Collider other)
         {
             if (other.gameObject.CompareTag(Constants.shotTag))
             {
                 finalShot = true;
+                smokeEffect.Stop();
+                speedEffect.Stop();
                 _moveState = new ShotState(playerRb: _playerRigidbody, player: _player, shotText: shotText,
                     shotForce: FinalShoot, isFinish, finishPanel);
-                smokeEffect.Stop();
             }
 
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
-                _playerRigidbody.velocity = Vector3.zero;
                 smokeEffect.Stop();
+                speedEffect.Stop();
+                _playerRigidbody.velocity = Vector3.zero;
             }
         }
 
-        private void Ramp(Collision ramp)
+        void Ramp(Collision ramp)
         {
-            if (ramp.gameObject.CompareTag("Ramp"))
+            if (ramp.gameObject.CompareTag(Constants.rampTag))
             {
                 var position = gameObject.transform.position;
                 Vector3 endValue = new Vector3(position.x, position.y, position.z + 6);
                 gameObject.transform.DOJump(endValue,3,0,1);
+            }
+        }
+        
+        void Obstacles(Collision other)
+        {
+            if (other.collider.CompareTag(Constants.handTag))
+            {
+                transform.DOMoveZ(transform.position.z - 3, 1);
+                _playerSpeed -= upgradeSpeedUp * 2;
+            }
+            else if (other.collider.CompareTag(Constants.blockTag))
+            {
+                transform.DOMoveZ(transform.position.z - 3, 1);
+                _playerSpeed -= upgradeSpeedUp * 2;
+                Destroy(other.gameObject, 0.5f);
             }
         }
     }

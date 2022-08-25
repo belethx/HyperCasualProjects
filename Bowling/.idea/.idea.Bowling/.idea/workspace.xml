@@ -14,8 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coins.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedParticleEffect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -39,10 +38,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Coin.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CoinSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Coins.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Hand.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SmokeParticleEffect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpeedParticleEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerUpgrades.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/FollowCamera.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -126,6 +128,7 @@
       <workItem from="1661339411574" duration="7704000" />
       <workItem from="1661355361034" duration="7955000" />
       <workItem from="1661369563025" duration="5715000" />
+      <workItem from="1661380979079" duration="6153000" />
     </task>
     <servers />
   </component>

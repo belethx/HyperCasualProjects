@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6743894403695224258}
+  - component: {fileID: 1042506250428117570}
   - component: {fileID: 6743894403695224259}
   - component: {fileID: 6743894403695224260}
   m_Layer: 0
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!114 &1042506250428117570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743894403695224261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c64c096ab63c543812a53d66e623b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &6743894403695224259
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -105,7 +118,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -222,7 +235,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 0, g: 0.52039003, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.49004716, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.81002593, b: 0.6273585, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
@@ -285,7 +298,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.5
-      minScalar: 1
+      minScalar: 0.75
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -865,7 +878,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 21.428572
       minScalar: 10
       maxCurve:
         serializedVersion: 2

@@ -12,7 +12,7 @@ public class PlayerUpgrades : MonoBehaviour
     //[SerializeField] private float holeOffset = 0.25f;
 
     private Renderer _renderer;
-    float _basicSmoothness;
+    private float _basicSmoothness;
     private int _currentEmeryCounter;
     private int _basicEmeryCounter;
     private Dialogues _dialogues;
