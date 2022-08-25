@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3849156710994248862}
   - component: {fileID: 482077481691738784}
   - component: {fileID: 482077481691738785}
+  - component: {fileID: 1482511775}
   m_Layer: 0
   m_Name: Blok1.004
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +92,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482077481691738786}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -112,6 +113,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.09308835, z: 0.08038607}
   m_Center: {x: 0.000000014901161, y: 0.0000000037252903, z: 0}
+--- !u!114 &1482511775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482077481691738786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &643759988462638778
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,9 +139,10 @@ GameObject:
   - component: {fileID: 3670898279797996759}
   - component: {fileID: 643759988462638776}
   - component: {fileID: 643759988462638777}
+  - component: {fileID: 529810181}
   m_Layer: 0
   m_Name: Blok1.008
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +218,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643759988462638778}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -224,6 +239,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.093088344, z: 0.08038607}
   m_Center: {x: 0.000000014901161, y: -0.0000000037252903, z: 0}
+--- !u!114 &529810181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643759988462638778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &1197970901272553664
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,9 +265,10 @@ GameObject:
   - component: {fileID: 684142725785544826}
   - component: {fileID: 1197970901272553694}
   - component: {fileID: 1197970901272553695}
+  - component: {fileID: 1408262300}
   m_Layer: 0
   m_Name: Blok1.006
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +344,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197970901272553664}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -336,6 +365,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.093088344, z: 0.08038607}
   m_Center: {x: 0.000000029802322, y: -0.0000000037252903, z: 0}
+--- !u!114 &1408262300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197970901272553664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &1264999956551399164
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,9 +391,10 @@ GameObject:
   - component: {fileID: 6656044012800928706}
   - component: {fileID: 1264999956551399162}
   - component: {fileID: 1264999956551399163}
+  - component: {fileID: 776698411}
   m_Layer: 0
   m_Name: Blok1.015
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +470,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264999956551399164}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -448,6 +491,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503498, y: 0.093088366, z: 0.08038607}
   m_Center: {x: -0.000000029802322, y: 0.000000014901161, z: 0}
+--- !u!114 &776698411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264999956551399164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &1293914007772039322
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,9 +517,10 @@ GameObject:
   - component: {fileID: 5989240187017611643}
   - component: {fileID: 1293914007772039320}
   - component: {fileID: 1293914007772039321}
+  - component: {fileID: 451449214}
   m_Layer: 0
   m_Name: Blok1.014
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,7 +596,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293914007772039322}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -560,6 +617,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503498, y: 0.093088344, z: 0.08038607}
   m_Center: {x: -0.000000029802322, y: -0.0000000037252903, z: 0}
+--- !u!114 &451449214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293914007772039322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &1660562440784474628
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,9 +643,10 @@ GameObject:
   - component: {fileID: 4642501139169529441}
   - component: {fileID: 1660562440784474626}
   - component: {fileID: 1660562440784474627}
+  - component: {fileID: 961109266}
   m_Layer: 0
   m_Name: Blok1.012
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -651,7 +722,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660562440784474628}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -672,6 +743,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503496, y: 0.093088344, z: 0.08038607}
   m_Center: {x: 0.00000001117587, y: -0.0000000037252903, z: 0}
+--- !u!114 &961109266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660562440784474628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &3260585032786828871
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,9 +769,10 @@ GameObject:
   - component: {fileID: 6006911242808405225}
   - component: {fileID: 3260585032786828869}
   - component: {fileID: 3260585032786828870}
+  - component: {fileID: 147374738}
   m_Layer: 0
   m_Name: Blok1.007
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -763,7 +848,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3260585032786828871}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -784,6 +869,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.093088366, z: 0.08038607}
   m_Center: {x: 0.000000029802322, y: 0.000000014901161, z: 0}
+--- !u!114 &147374738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260585032786828871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &4082305337035427169
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,9 +895,10 @@ GameObject:
   - component: {fileID: 2695425977823289796}
   - component: {fileID: 4082305337035427199}
   - component: {fileID: 4082305337035427168}
+  - component: {fileID: 840463527}
   m_Layer: 0
   m_Name: Blok1.011
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -875,7 +974,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4082305337035427169}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -896,6 +995,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.175035, y: 0.093088366, z: 0.08038607}
   m_Center: {x: -0.000000031199306, y: 0.000000014901161, z: 0}
+--- !u!114 &840463527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082305337035427169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &4515874162073950919
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,9 +1021,10 @@ GameObject:
   - component: {fileID: 2443670307940875927}
   - component: {fileID: 4515874162073950917}
   - component: {fileID: 4515874162073950918}
+  - component: {fileID: 87647051}
   m_Layer: 0
   m_Name: Blok1.003
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -987,7 +1100,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515874162073950919}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1008,6 +1121,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.175035, y: 0.09308835, z: 0.08038607}
   m_Center: {x: -0.000000031199306, y: 0.0000000037252903, z: 0}
+--- !u!114 &87647051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515874162073950919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &5301766929357284239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1145,7 @@ GameObject:
   - component: {fileID: 4816732027157051701}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1066,9 +1192,10 @@ GameObject:
   - component: {fileID: 5557390706541770726}
   - component: {fileID: 6148523471175553075}
   - component: {fileID: 6148523471175553076}
+  - component: {fileID: 2016818645}
   m_Layer: 0
   m_Name: Blok1.009
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1144,7 +1271,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148523471175553077}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1165,6 +1292,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.093088366, z: 0.08038607}
   m_Center: {x: 0.000000014901161, y: 0.000000014901161, z: 0}
+--- !u!114 &2016818645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148523471175553077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &7540207384468691120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,9 +1318,10 @@ GameObject:
   - component: {fileID: 9026869318485357420}
   - component: {fileID: 7540207384468691086}
   - component: {fileID: 7540207384468691087}
+  - component: {fileID: 98836971}
   m_Layer: 0
   m_Name: Blok1.010
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1256,7 +1397,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7540207384468691120}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1277,6 +1418,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.175035, y: 0.093088344, z: 0.08038607}
   m_Center: {x: -0.000000031199306, y: -0.0000000037252903, z: 0}
+--- !u!114 &98836971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540207384468691120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &8016512620187816676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,9 +1444,10 @@ GameObject:
   - component: {fileID: 3430960600501797722}
   - component: {fileID: 8016512620187816674}
   - component: {fileID: 8016512620187816675}
+  - component: {fileID: 1950783516}
   m_Layer: 0
   m_Name: Blok1.002
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1368,7 +1523,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016512620187816676}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1389,6 +1544,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503496, y: 0.09308835, z: 0.08038607}
   m_Center: {x: 0.00000001117587, y: 0.0000000037252903, z: 0}
+--- !u!114 &1950783516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016512620187816676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &8240148046420808310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,9 +1570,10 @@ GameObject:
   - component: {fileID: 5601176947273050683}
   - component: {fileID: 8240148046420808308}
   - component: {fileID: 8240148046420808309}
+  - component: {fileID: 898033681}
   m_Layer: 0
   m_Name: Blok1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1480,7 +1649,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8240148046420808310}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1501,6 +1670,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503498, y: 0.09308835, z: 0.08038607}
   m_Center: {x: -0.000000029802322, y: 0.0000000037252903, z: 0}
+--- !u!114 &898033681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240148046420808310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &8438903095479473432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,9 +1696,10 @@ GameObject:
   - component: {fileID: 2695492841863639772}
   - component: {fileID: 8438903095479473430}
   - component: {fileID: 8438903095479473431}
+  - component: {fileID: 65339262}
   m_Layer: 0
   m_Name: Blok1.013
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1592,7 +1775,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8438903095479473432}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1613,6 +1796,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503496, y: 0.093088366, z: 0.08038607}
   m_Center: {x: 0.00000001117587, y: 0.000000014901161, z: 0}
+--- !u!114 &65339262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8438903095479473432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50
 --- !u!1 &9193845278699241446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,9 +1822,10 @@ GameObject:
   - component: {fileID: 3076215682436782671}
   - component: {fileID: 9193845278699241444}
   - component: {fileID: 9193845278699241445}
+  - component: {fileID: 336304213}
   m_Layer: 0
   m_Name: Blok1.005
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1704,7 +1901,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9193845278699241446}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1725,3 +1922,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17503501, y: 0.09308835, z: 0.08038607}
   m_Center: {x: 0.000000029802322, y: 0.0000000037252903, z: 0}
+--- !u!114 &336304213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193845278699241446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bf1d2adefdae54c861064b35f645e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htiForce: 50

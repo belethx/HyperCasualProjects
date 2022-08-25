@@ -146,6 +146,7 @@ namespace Player
         {
             smokeEffect.Stop();
             speedEffect.Stop();
+            _playerRigidbody.velocity = Vector3.zero;
             _moveState = null;
         }
         
@@ -218,13 +219,24 @@ namespace Player
             {
                 transform.DOMoveZ(transform.position.z - 3, 1);
                 _playerSpeed -= upgradeSpeedUp * 2;
+                smokeEmmision -= upgradeSmoke;
+                speedEmmision -= upgradeSpeedEffect * 2;
             }
             else if (other.collider.CompareTag(Constants.blockTag))
             {
                 transform.DOMoveZ(transform.position.z - 3, 1);
                 _playerSpeed -= upgradeSpeedUp * 2;
+                smokeEmmision -= upgradeSmoke;
+                speedEmmision -= upgradeSpeedEffect * 2;
                 Destroy(other.gameObject, 0.5f);
             }
+            // else if (other.collider.CompareTag(Constants.wallTag))
+            // {
+            //     transform.DOMoveZ(transform.position.z - 3, 1);
+            //     _playerSpeed -= upgradeSpeedUp * 2;
+            //     smokeEmmision -= upgradeSmoke;
+            //     speedEmmision -= upgradeSpeedEffect * 2;
+            // }
         }
 
         private void OnTriggerEnter(Collider other)

@@ -16,6 +16,7 @@ TagManager:
   - Hand
   - Ramp
   - Block
+  - Wall
   layers:
   - Default
   - TransparentFX

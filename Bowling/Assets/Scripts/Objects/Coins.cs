@@ -7,7 +7,7 @@ public class Coins : MonoBehaviour
 {
     [SerializeField] private float rotateSpeed = 30;
 
-    
+
     private void Update()
     {
         transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);

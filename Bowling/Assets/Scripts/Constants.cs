@@ -14,6 +14,7 @@ public class Constants : MonoBehaviour
     public static string mudTag = "Mud";
     public static string handTag = "Hand";
     public static string blockTag = "Block";
+    public static string wallTag = "Wall";
 
     public static string coinTag = "Coin";
     public static string groundTag = "Ground";

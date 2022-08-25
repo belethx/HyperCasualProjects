@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player
@@ -34,6 +35,18 @@ namespace Player
             else if (other.CompareTag(Constants.tenpinTag))
             {
                 _audioSource.PlayOneShot(audioClips[4]);
+            }
+            else if (other.CompareTag(Constants.coinTag))
+            {
+                _audioSource.PlayOneShot(audioClips[5]);
+            }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.collider.CompareTag(Constants.blockTag) || other.collider.CompareTag(Constants.wallTag))
+            {
+                _audioSource.PlayOneShot(audioClips[6]);
             }
         }
     }
