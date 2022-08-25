@@ -7,11 +7,13 @@ namespace Objects
         [SerializeField] private float htiForce = 5;
     
         private Rigidbody _rigidbody;
+        private BoxCollider _collider;
         private bool _getHit;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _collider = GetComponent<BoxCollider>();
         }
 
         private void Update()
@@ -25,6 +27,7 @@ namespace Objects
     
         void GetSmaller()
         {
+            _collider.enabled = false;
             transform.localScale  -= new Vector3(1.2f, 1.2f, 1.2f) * Time.deltaTime;
             if (transform.localScale.x <= 0) 
             { 
@@ -38,7 +41,6 @@ namespace Objects
             {
                 _rigidbody. AddForce(new Vector3(0, 1, 1) * htiForce);
                 _getHit = true;
-                //other.transform.DOMoveZ(transform.position.z - 3, 1);
             }
         }
     }

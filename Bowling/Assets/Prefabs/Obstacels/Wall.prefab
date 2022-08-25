@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1482511775}
   m_Layer: 0
   m_Name: Blok1.004
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 529810181}
   m_Layer: 0
   m_Name: Blok1.008
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1408262300}
   m_Layer: 0
   m_Name: Blok1.006
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 776698411}
   m_Layer: 0
   m_Name: Blok1.015
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 451449214}
   m_Layer: 0
   m_Name: Blok1.014
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 961109266}
   m_Layer: 0
   m_Name: Blok1.012
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 147374738}
   m_Layer: 0
   m_Name: Blok1.007
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 840463527}
   m_Layer: 0
   m_Name: Blok1.011
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 87647051}
   m_Layer: 0
   m_Name: Blok1.003
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1143,6 +1143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4816732027157051701}
+  - component: {fileID: 1723923405566200267}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -1179,6 +1180,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1723923405566200267
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301766929357284239}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9118927, y: 0.2924084, z: 0.08718586}
+  m_Center: {x: 0.012754807, y: 0.14064726, z: 0.037992638}
 --- !u!1 &6148523471175553077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1209,7 @@ GameObject:
   - component: {fileID: 2016818645}
   m_Layer: 0
   m_Name: Blok1.009
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,7 +1335,7 @@ GameObject:
   - component: {fileID: 98836971}
   m_Layer: 0
   m_Name: Blok1.010
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1447,7 +1461,7 @@ GameObject:
   - component: {fileID: 1950783516}
   m_Layer: 0
   m_Name: Blok1.002
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1573,7 +1587,7 @@ GameObject:
   - component: {fileID: 898033681}
   m_Layer: 0
   m_Name: Blok1
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1699,7 +1713,7 @@ GameObject:
   - component: {fileID: 65339262}
   m_Layer: 0
   m_Name: Blok1.013
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1825,7 +1839,7 @@ GameObject:
   - component: {fileID: 336304213}
   m_Layer: 0
   m_Name: Blok1.005
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

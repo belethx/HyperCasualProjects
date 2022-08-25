@@ -103,19 +103,9 @@ public class PlayerUpgrades : MonoBehaviour
             currentSmootness = 0;
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-    }
-
-    void Obstacles(Collision other)
-    {
-        if (other.collider.CompareTag(Constants.handTag))
-        {
-            _currentEmeryCounter = _basicEmeryCounter;
-            currentSmootness = _basicSmoothness;
-        }
-        else if (other.collider.CompareTag(Constants.blockTag))
+        else if (other.CompareTag(Constants.wallTag))
         {
             _meshCounter++;
-            
             if (_meshCounter == meshFilters.Length)
             {
                 _rigidbody.useGravity = false;
@@ -124,6 +114,15 @@ public class PlayerUpgrades : MonoBehaviour
                 Instantiate(cuttedBall, transform.position, quaternion.identity);
                 _playerManager.isFinish = true;
             }
+        }
+    }
+
+    void Obstacles(Collision other)
+    {
+        if (other.collider.CompareTag(Constants.handTag))
+        {
+            _currentEmeryCounter = _basicEmeryCounter;
+            currentSmootness = _basicSmoothness;
         }
     }
     
