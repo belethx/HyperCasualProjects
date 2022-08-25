@@ -39,6 +39,11 @@ public class Panels : MonoBehaviour
     private void Update()
     {
         FinalShotCheck();
+
+        if (playerManager.isFinish)
+        {
+            finishPanel.SetActive(true);
+        }
     }
 
     public void StartGame()

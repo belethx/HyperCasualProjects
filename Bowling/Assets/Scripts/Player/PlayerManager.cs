@@ -97,11 +97,16 @@ namespace Player
 
         void Update()
         {
-            if (isPlay && !finalShot)
+            if (isPlay && !finalShot && !isFinish)
             {
                 smokeEffect.Play();
                 _moveState = new PlayState(_playerRigidbody, _camera, _playerTransform, swipeSpeed, PlayerSpeed);
             }
+            else if (isFinish)
+            {
+                FinishGame();
+            }
+           
             _moveState.Movement();
             
             SmokeEffect();
@@ -129,7 +134,7 @@ namespace Player
             var smokeEffectEmission = smokeEffect.emission;
             smokeEffectEmission.rateOverTime = smokeEmmision;
 
-            if (finalShot)
+            if (finalShot || isFinish)
             {
                 smokeEffect.Stop();
             }
@@ -137,22 +142,17 @@ namespace Player
             //final atışında çıkacak mı
         }
 
-        private void OnTriggerEnter(Collider other)
+        void FinishGame()
         {
-            CheckUpgrades(other);
-            CheckFinishLine(other);
+            smokeEffect.Stop();
+            speedEffect.Stop();
+            _moveState = null;
         }
-
-        private void OnCollisionEnter(Collision other)
-        {
-           Obstacles(other);
-        }
-
-        private void OnCollisionStay(Collision collision)
-        {
-            Ramp(collision);
-        }
-
+        
+        
+        
+        
+        
         void CheckUpgrades(Collider other)
         {
             if (other.CompareTag(Constants.varnishTag))
@@ -198,9 +198,7 @@ namespace Player
 
             if (other.gameObject.CompareTag(Constants.finalLineTag))
             {
-                smokeEffect.Stop();
-                speedEffect.Stop();
-                _playerRigidbody.velocity = Vector3.zero;
+                isFinish = true;
             }
         }
 
@@ -227,6 +225,22 @@ namespace Player
                 _playerSpeed -= upgradeSpeedUp * 2;
                 Destroy(other.gameObject, 0.5f);
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            CheckUpgrades(other);
+            CheckFinishLine(other);
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+           Obstacles(other);
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            Ramp(collision);
         }
     }
 }

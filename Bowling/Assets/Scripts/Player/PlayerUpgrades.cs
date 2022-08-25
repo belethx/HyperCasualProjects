@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerUpgrades : MonoBehaviour
@@ -10,20 +12,27 @@ public class PlayerUpgrades : MonoBehaviour
     [SerializeField] private float varnisCounter= 0.40f;
     [SerializeField] private Material[] ballMaterials;
     [SerializeField] private Mesh[] meshFilters;
-    //[SerializeField] private float holeOffset = 0.25f;
+    [SerializeField] private GameObject cuttedBall;
 
     private Renderer _renderer;
     private MeshFilter _meshFilter;
+    private Rigidbody _rigidbody;
+    private PlayerManager _playerManager;
+    
     private int _meshCounter;
     private float _basicSmoothness;
     private int _currentEmeryCounter;
     private int _basicEmeryCounter;
     private Dialogues _dialogues;
+    private SphereCollider _collider;
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _meshFilter = GetComponent<MeshFilter>();
+        _collider = GetComponent<SphereCollider>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _playerManager = GetComponent<PlayerManager>();
 
         _currentEmeryCounter = _basicEmeryCounter;
         currentSmootness = _basicSmoothness;
@@ -63,10 +72,6 @@ public class PlayerUpgrades : MonoBehaviour
     void BrokenBall()
     {
         _meshFilter.mesh = meshFilters[_meshCounter];
-        if (_meshCounter >= meshFilters.Length)
-        {
-            _meshCounter = meshFilters.Length - 1;
-        }
     }
 
     void Upgrades(Collider other)
@@ -110,6 +115,15 @@ public class PlayerUpgrades : MonoBehaviour
         else if (other.collider.CompareTag(Constants.blockTag))
         {
             _meshCounter++;
+            
+            if (_meshCounter == meshFilters.Length)
+            {
+                _rigidbody.useGravity = false;
+                _renderer.enabled = false;
+                _collider.enabled = false;
+                Instantiate(cuttedBall, transform.position, quaternion.identity);
+                _playerManager.isFinish = true;
+            }
         }
     }
     
