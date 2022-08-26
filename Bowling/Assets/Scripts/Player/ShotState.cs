@@ -51,7 +51,8 @@ namespace Player
                     _shotText.gameObject.SetActive(false);
                     _ballRb.constraints = RigidbodyConstraints.FreezePositionX;
                     _ballRb.AddForce(0, 0, 25 * shotForce);
-                    if (_ballRb.velocity.z > 3)
+                    
+                    if (_ballRb.velocity.z > 5)
                     {
                         _isStop = false;
                     }
@@ -59,6 +60,7 @@ namespace Player
 
                 if (!_isStop && _ballRb.velocity.z < 2)
                 {
+                
                     _ballRb.velocity = Vector3.zero;
                     _ballRb.constraints = RigidbodyConstraints.FreezePositionZ;
                     _isfinish = true;

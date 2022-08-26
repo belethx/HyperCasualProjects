@@ -47,7 +47,7 @@ namespace Player
             {
                 if (_playerSpeed < 150)
                 {
-                    return 130;
+                    return 100;
                 }
 
                 return _playerSpeed;
@@ -116,7 +116,7 @@ namespace Player
             }
 
             _moveState.Movement();
-
+            print(_moveState.GetType());
             SmokeEffect();
             SpeedEffect();
             ShotTime();
